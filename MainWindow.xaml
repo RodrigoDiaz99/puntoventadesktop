@@ -5,13 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Inicio" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="765*"/>
-            <ColumnDefinition Width="29*"/>
-            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="417*"/>
+            <ColumnDefinition Width="250*"/>
         </Grid.ColumnDefinitions>
+        <Grid>
+            <Image HorizontalAlignment="Center" Height="138" Margin="0,40,0,0" VerticalAlignment="Top" Width="127" Source="/spacio_fems_black.png"/>
+            <Label Content="Acceso" HorizontalAlignment="Left" Margin="88,143,0,0" VerticalAlignment="Top" Width="196"/>
+            <Label Content="Ingresa tus datos" HorizontalAlignment="Left" Margin="88,174,0,0" VerticalAlignment="Top" Width="142"/>
+            <TextBox HorizontalAlignment="Left" Margin="224,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="224,279,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="97,271,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Correo/Usuario" HorizontalAlignment="Left" Margin="97,237,0,0" VerticalAlignment="Top" Width="102" Height="28"/>
+            <Button Content="Acceder" HorizontalAlignment="Left" Margin="165,359,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/background.jpeg" Height="418" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5" Width="288" Margin="0,0,0,8">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.18"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.997"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.OpacityMask>
+                    <LinearGradientBrush StartPoint="0.150,0.0" EndPoint="0.75,1.0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#825ee4"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+            </Image>
+           
+           
+        </Grid>
+
+
+
+
 
     </Grid>
 </Window>
