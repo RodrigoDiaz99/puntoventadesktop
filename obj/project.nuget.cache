@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DuGeN6XlM7k/+IS1MLBFU65yvmW3Weuc6aWvGij9Xj3umIoHSnvvU7MVAGso6Oc5c3GLKJBTkKIh/ZnST4adMw==",
+  "dgSpecHash": "alEh26gKMst/GJvPqTQ4YGktAbzGoKQKa93jrDNyCZvU4JxgBxYicjheoFkk1wEXdxm7o3DWi0twuqbgl4ayyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\rodrigo.diaz\\Source\\Repos\\puntoventadesktop\\punto_venta.csproj",
   "expectedPackageFiles": [
@@ -8,5 +8,12 @@
     "C:\\Users\\rodrigo.diaz\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
     "C:\\Users\\rodrigo.diaz\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\rodrigo.diaz\\Source\\Repos\\puntoventadesktop\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
