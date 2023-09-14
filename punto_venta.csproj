@@ -7,4 +7,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="720ee04a-0a3c-4c17-9fa5-860a3313d71d.png" />
+    <None Remove="775bedcf-162b-4c97-9fac-4004cc38bba8.png" />
+    <None Remove="cdc5a9f1-6c44-4c79-87b2-1a7a68dc9078.png" />
+    <None Remove="logo.png" />
+    <None Remove="spacio_fems_black.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="720ee04a-0a3c-4c17-9fa5-860a3313d71d.png" />
+    <Resource Include="775bedcf-162b-4c97-9fac-4004cc38bba8.png" />
+    <Resource Include="cdc5a9f1-6c44-4c79-87b2-1a7a68dc9078.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="spacio_fems_black.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
 </Project>

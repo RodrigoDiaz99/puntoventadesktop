@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zeM9odI5DQ5OYfykPZkAluML3ZliNbj0xD0fER2xpLRIN/nAM2Db3R4Tljw737GvhIDpK/VTCB6zMNYqHB6ZUA==",
+  "dgSpecHash": "x74t+4pL3KYQyz3QSTUbb7Wztf0pWYe6NngnmE6u/vpVrj4rCQYBkJS/PBJnes/eIpZGsFnGsb1FHUbZmsN6eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\rodrigodiazserviran\\source\\repos\\punto_venta\\punto_venta.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\rodrigodiazserviran\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\rodrigodiazserviran\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\rodrigodiazserviran\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
   "logs": []
 }
