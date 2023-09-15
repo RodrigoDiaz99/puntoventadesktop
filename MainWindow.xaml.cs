@@ -1,19 +1,11 @@
-﻿using Org.BouncyCastle.Crypto.Tls;
+﻿using Org.BouncyCastle.Crypto.Generators;
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using BCrypt.Net;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Linq;
 
 namespace punto_venta
 {
@@ -39,30 +31,37 @@ namespace punto_venta
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-           
+         
 
-                string inputTexto = txtUsuario.Text;
+            string inputTexto = txtUsuario.Text;
             string inputPassword = txtPassword.Password;
-            string hashedPassword = CalcularHash(inputPassword);
-
-        }
-        private string CalcularHash(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(inputPassword);
+            using (var context = new DBConnection())
             {
-                // Convierte la cadena de entrada en bytes
-                byte[] bytes = Encoding.UTF8.GetBytes(input);
-
-                // Calcula el hash y lo convierte a una cadena hexadecimal
-                byte[] hashBytes = sha256.ComputeHash(bytes);
-                StringBuilder stringBuilder = new StringBuilder();
-                foreach (byte b in hashBytes)
+                try
                 {
-                    stringBuilder.Append(b.ToString("x2")); // "x2" significa formato hexadecimal
+                    var resultados = context.users.Where(u => u.id>0).ToList();
+
+                    // Resto del código para procesar los resultados
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener los resultados: " + ex.Message);
                 }
 
-                return stringBuilder.ToString();
+              
+            /*    foreach (var resultado in resultados)
+                {
+                    Console.WriteLine("Contraseña encriptada: " + resultados);
+                    Console.WriteLine("Contraseña encriptada: " + resultados);
+                }*/
             }
+
+            bool isMatch = BCrypt.Net.BCrypt.Verify("123456", passwordHash);
+       
+            Console.WriteLine("Contraseña encriptada: " + passwordHash);
+
         }
+      
     }
 }
