@@ -13,29 +13,29 @@ namespace punto_venta.models
         [Key] // Esto indica que Id es la clave primaria
         public int id { get; set; }
 
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public string Usuario { get; set; }
-        public string CodigoUsuario { get; set; }
-        public string Email { get; set; }
-        public string Telefono { get; set; }
-        public string TelefonoContacto { get; set; }
-        public DateTime? EmailVerifiedAt { get; set; }
-        public string Password { get; set; }
-        public string HuellaDigital { get; set; }
-        public string FotoPerfil { get; set; }
-        public string Ocupacion { get; set; }
-        public int Edad { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public string Expediente { get; set; }
-        public bool Cliente { get; set; }
-        public bool Empleado { get; set; }
-        public int RolesId { get; set; }
-        public string RememberToken { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public string? nombre { get; set; }
+        public string? apellido_paterno { get; set; }
+        public string? apellido_materno { get; set; }
+        public string? usuario { get; set; }
+        public string? codigo_usuario { get; set; }
+        public string? email { get; set; }
+        public string? telefono { get; set; }
+        public string? telefono_contacto { get; set; }
+        public DateTime? email_verified_at { get; set; }
+        public string password { get; set; }
+        public string? huella_digital { get; set; }
+        public string? foto_perfil { get; set; }
+        public string? ocupacion { get; set; }
+        public int? edad { get; set; }
+        public DateTime? fecha_nacimiento { get; set; }
+        public bool? expediente { get; set; }
+        public bool? cliente { get; set; }
+        public bool? empleado { get; set; }
+        public int? roles_id { get; set; }
+        public string? remember_token { get; set; }
+        public DateTime? created_at { get; set; }
+        public DateTime? updated_at { get; set; }
+        public DateTime? deleted_at { get; set; }
     }
 
 }
