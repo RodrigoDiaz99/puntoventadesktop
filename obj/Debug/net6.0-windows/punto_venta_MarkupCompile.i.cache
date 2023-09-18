@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rodrigodiazserviran\source\repos\punto_venta\obj\Debug\net6.0-windows\
+C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\
 punto_venta
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\rodrigodiazserviran\source\repos\punto_venta\App.xaml
+C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\App.xaml
 11407045341
 2820656829
 7602817338
 225291168191
 MainWindow.xaml;
 
-False
+True
 

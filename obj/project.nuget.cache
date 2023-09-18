@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9jkmjNE96+MmEXPSCA/8JRpFvAs+F+f/YpkHOx4GsJL4QJ1ZzJgqWCklWWltPJpLD9jeY0AifhnhphWxGqpL2A==",
+  "dgSpecHash": "APMti9Ua1obwysgTfvJGNneZr+W9Hai9ImhpnDSmyfCzAmZN8b4XdyHYFiKi4fIj1ou6DAFbPWFN9T4h6gwbJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rodrigodiazserviran\\source\\repos\\punto_venta\\punto_venta.csproj",
+  "projectFilePath": "C:\\Users\\rodrigo.diaz\\source\\repos\\puntoventadesktop\\punto_venta.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodrigo.diaz\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\rodrigo.diaz\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

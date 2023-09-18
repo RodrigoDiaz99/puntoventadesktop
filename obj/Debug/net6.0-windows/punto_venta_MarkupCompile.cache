@@ -1,20 +1,20 @@
 ﻿punto_venta
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\
+C:\Users\rodrigo.diaz\source\repos\puntoventadesktop\obj\Debug\net6.0-windows\
 punto_venta
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\App.xaml
+C:\Users\rodrigo.diaz\source\repos\puntoventadesktop\App.xaml
 11407045341
 2820656829
-548801355
+7602817338
 225291168191
 MainWindow.xaml;
 
-False
+True
 
