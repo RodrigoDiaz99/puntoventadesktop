@@ -42,6 +42,10 @@ namespace punto_venta
                 {
                     var resultados = context.users.Where(u => u.id>0).ToList();
 
+                    var nombre = resultados[0].nombre;
+
+                    Console.WriteLine("nombre: " + nombre);
+
                     // Resto del código para procesar los resultados
                 }
                 catch (Exception ex)
