@@ -10,13 +10,34 @@
   <ItemGroup>
     <None Remove="720ee04a-0a3c-4c17-9fa5-860a3313d71d.png" />
     <None Remove="775bedcf-162b-4c97-9fac-4004cc38bba8.png" />
+    <None Remove="asignar_icon.png" />
+    <None Remove="background.jpeg" />
+    <None Remove="background.png" />
     <None Remove="cdc5a9f1-6c44-4c79-87b2-1a7a68dc9078.png" />
+    <None Remove="corte_caja.png" />
     <None Remove="logo.png" />
+    <None Remove="product_icon.png" />
+    <None Remove="product_icon.svg" />
     <None Remove="spacio_fems_black.png" />
+    <None Remove="ticket_icon.png" />
+    <None Remove="users_icon.png" />
+    <None Remove="validar_icon.png" />
+    <None Remove="ver_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="asignar_icon.png" />
+    <Resource Include="background.jpeg" />
+    <Resource Include="background.png" />
+    <Resource Include="corte_caja.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="product_icon.png" />
+    <Resource Include="product_icon.svg" />
     <Resource Include="spacio_fems_black.png" />
+    <Resource Include="ticket_icon.png" />
+    <Resource Include="users_icon.png" />
+    <Resource Include="validar_icon.png" />
+    <Resource Include="ver_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,5 +48,7 @@
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
   </ItemGroup>
+
+
 
 </Project>

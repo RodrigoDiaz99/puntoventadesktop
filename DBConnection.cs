@@ -8,6 +8,7 @@ namespace punto_venta
     public class DBConnection : DbContext
     {
         public DbSet<User> users { get; set; }
+        public DbSet<Corte_Caja> corte_cajas { get; set; }
 
         public bool IsConnectionSuccessful()
         {

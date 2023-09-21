@@ -35,36 +35,59 @@ namespace punto_venta
 
             string inputTexto = txtUsuario.Text;
             string inputPassword = txtPassword.Password;
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(inputPassword);
+
             using (var context = new DBConnection())
             {
                 try
                 {
                     var resultados = context.users.Where(u => u.id>0).ToList();
 
-                    var nombre = resultados[0].nombre;
-
-                    Console.WriteLine("nombre: " + nombre);
+                    var password = resultados[0].password;
+                  
+                    bool isMatch = BCrypt.Net.BCrypt.Verify(inputPassword, password);
+                    var txt = isMatch;
+                    if (isMatch)
+                    {
+                        var userId = resultados[0].id;
+                        var resultadoCorte = context.corte_cajas
+                            .Where(u => u.lActivo==true)
+                            .Where(u=>u.users_id==userId)
+                            .ToList();
+                        if (resultadoCorte.Count > 0)
+                        {
+                            Venta ventanaPuntoVenta = new Venta();
+                            ventanaPuntoVenta.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            CorteCaja ventanaCorteCaja = new CorteCaja(userId);
+                            ventanaCorteCaja.Show();
+                            this.Close();
+                        }
+                       
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña Incorrecta" );
+                    }
 
                     // Resto del código para procesar los resultados
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error al obtener los resultados: " + ex.Message);
+                    MessageBox.Show("Error al obtener los resultados: " + ex.Message);
+                   
                 }
 
               
-            /*    foreach (var resultado in resultados)
-                {
-                    Console.WriteLine("Contraseña encriptada: " + resultados);
-                    Console.WriteLine("Contraseña encriptada: " + resultados);
-                }*/
+         
             }
 
-            bool isMatch = BCrypt.Net.BCrypt.Verify("123456", passwordHash);
+        
        
-            Console.WriteLine("Contraseña encriptada: " + passwordHash);
-
+           
         }
       
     }

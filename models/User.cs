@@ -22,7 +22,7 @@ namespace punto_venta.models
         public string? telefono { get; set; }
         public string? telefono_contacto { get; set; }
         public DateTime? email_verified_at { get; set; }
-        public string password { get; set; }
+        public string? password { get; set; }
         public string? huella_digital { get; set; }
         public string? foto_perfil { get; set; }
         public string? ocupacion { get; set; }
