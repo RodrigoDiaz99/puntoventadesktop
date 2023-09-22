@@ -5,33 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="Venta" Height="450" Width="800">
-    <Grid>
+        Title="Venta" Height="800" Width="1200">
+    <Grid Opacity="1">
         <Grid.RowDefinitions>
-            <RowDefinition Height="117*"/>
-            <RowDefinition Height="317*"/>
+            <RowDefinition Height="148*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="312*"/>
+            <RowDefinition Height="83*"/>
+            <RowDefinition Height="48*"/>
         </Grid.RowDefinitions>
-        <Button Content="" HorizontalAlignment="Left" Margin="28,13,0,0" VerticalAlignment="Top" Width="66" Height="54" Cursor="Hand" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="28,13,0,0" VerticalAlignment="Top" Width="66" Height="54" Cursor="Hand" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush  Stretch="Fill" TileMode="FlipX" ImageSource="/ticket_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="136,10,0,0" VerticalAlignment="Top" Height="49" Width="64" RenderTransformOrigin="0.638,0.517" Cursor="Hand" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="168,10,0,0" VerticalAlignment="Top" Height="49" Width="64" RenderTransformOrigin="1.047,0.45" Cursor="Hand" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/product_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="256,10,0,0" VerticalAlignment="Top" Cursor="Hand" Height="49" Width="66" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="311,11,0,0" VerticalAlignment="Top" Cursor="Hand" Height="49" Width="66" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/ver_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="377,13,0,0" VerticalAlignment="Top" Height="51" Width="66" RenderTransformOrigin="0.553,0.536" Cursor="Hand" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="451,10,0,0" VerticalAlignment="Top" Height="51" Width="66" RenderTransformOrigin="0.553,0.536" Cursor="Hand" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/asignar_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="507,10,0,0" VerticalAlignment="Top" Height="51" Width="60">
+        <Button Content="" HorizontalAlignment="Left" Margin="596,8,0,0" VerticalAlignment="Top" Height="51" Width="60">
             <Button.Background>
                 <ImageBrush ImageSource="/validar_icon.png"/>
             </Button.Background>
@@ -42,28 +46,67 @@
         <Label HorizontalAlignment="Left" Margin="18,67,0,0" VerticalAlignment="Top" Width="85" Height="43">
             <TextBlock Text="Realizar&#xD;&#xA;Corte de Caja" TextAlignment="Center" VerticalAlignment="Center"/>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="136,67,0,0" VerticalAlignment="Top" Width="85" Height="43">
+        <Label HorizontalAlignment="Left" Margin="158,67,0,0" VerticalAlignment="Top" Width="84" Height="43">
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="75"><Run Text="Ver "/><LineBreak/><Run Text="Productos"/></TextBlock>
 
         </Label>
-        <Label HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top" Width="92" Height="43">
+        <Label HorizontalAlignment="Left" Margin="285,70,0,0" VerticalAlignment="Top" Width="92" Height="43">
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="82"><Run Text="Ver"/><LineBreak/><Run Text="Membresias"/></TextBlock>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="366,69,0,0" VerticalAlignment="Top" Width="88" Height="54" Grid.RowSpan="2">
+        <Label HorizontalAlignment="Left" Margin="444,74,0,0" VerticalAlignment="Top" Width="80" Height="58">
             <TextBlock TextAlignment="Center" VerticalAlignment="Center"><Run Text="Asignar"/><LineBreak/><Run Text=" Membresias"/><LineBreak/><Run/></TextBlock>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="492,67,0,0" VerticalAlignment="Top" Width="90" Height="43">
+        <Label HorizontalAlignment="Left" Margin="587,74,0,0" VerticalAlignment="Top" Width="78" Height="43">
             <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Validar"/><LineBreak/><Run Text=" Membresias"/><LineBreak/><Run/></TextBlock>
         </Label>
-        <Button Content="" HorizontalAlignment="Left" Margin="642,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="53" Width="66">
+        <Button Content="" HorizontalAlignment="Left" Margin="749,6,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="53" Width="66" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush ImageSource="/users_icon.png"/>
             </Button.Background>
         </Button>
-        <Label HorizontalAlignment="Left" Margin="642,67,0,0" VerticalAlignment="Top" Width="66" Height="43">
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center"><Run Language="es-es" Text="Ver"/><LineBreak/><Run Language="es-es" Text="Usuarios"/><LineBreak/><Run/></TextBlock>
+        <Label HorizontalAlignment="Left" Margin="756,74,0,0" VerticalAlignment="Top" Width="52" Height="43">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Ver"/><LineBreak/><Run Language="es-es" Text="Usuarios"/><LineBreak/><Run/></TextBlock>
         </Label>
-        <TextBlock HorizontalAlignment="Left" Margin="22,38,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"><Run Language="es-es" Text="3222"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="114,39,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FFC3C9D6" Height="15" x:Name="txtFecha"><Run Language="es-es" Text=""/></TextBlock>
+        <Label Content="Fecha:" HorizontalAlignment="Left" Margin="25,9,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Width="58"/>
+        <Label Content="Hora:" HorizontalAlignment="Left" Margin="443,16,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="523,44,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" Background="#FFC3C9D6" Height="16" x:Name="txtHora"/>
+        <Label Content="Vendedor:" HorizontalAlignment="Left" Margin="841,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="943,41,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FFC3C9D6" Height="16" x:Name="txtUsuario"/>
+        <Label Content="Código de Articulo" HorizontalAlignment="Left" Margin="102,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="132"/>
+        <TextBox HorizontalAlignment="Left" Margin="331,37,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="512" TextChanged="TextBox_TextChanged_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="919,27,0,0" Grid.Row="2" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="46" Width="48" RenderTransformOrigin="0.49,0.577">
+            <Button.Background>
+                <ImageBrush ImageSource="/search_icon.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid Grid.Row="2" Margin="0,103,0,27" Grid.RowSpan="2" HorizontalAlignment="Center" Width="1180" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Codigo Barras" Binding="{Binding codigo_barras}" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad}" />
+                <DataGridTextColumn Header="Categoria" Binding="{Binding categoria}" />
+                <DataGridTextColumn Header="Nombre Producto" Binding="{Binding nombre_producto}" />
+                <DataGridTextColumn Header="Precio Unitario" Binding="{Binding precio_unitario}" />
+                <DataGridTextColumn Header="Total Producto" Binding="{Binding total_productos}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="28,43,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="150" FontWeight="Bold" FontSize="22" Cursor="Hand"/>
+        <Label Content="Importe" HorizontalAlignment="Left" Margin="28,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="18"/>
+        <Label Content="SubTotal" HorizontalAlignment="Left" Margin="215,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="84" FontWeight="Bold" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="225,33,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" FontWeight="Bold" FontSize="22" Width="131" Cursor="Hand"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="402,2,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="404,45,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.5,0.5" Height="26" Width="154" Cursor="Hand" VerticalAlignment="Top">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.323"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button Content="Cobrar" HorizontalAlignment="Left" Margin="683,30,0,0" Grid.Row="4" VerticalAlignment="Top" Click="Button_Click" FontWeight="Bold"/>
 
     </Grid>
 </Window>

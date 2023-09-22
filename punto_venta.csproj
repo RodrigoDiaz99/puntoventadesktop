@@ -18,6 +18,7 @@
     <None Remove="logo.png" />
     <None Remove="product_icon.png" />
     <None Remove="product_icon.svg" />
+    <None Remove="search_icon.png" />
     <None Remove="spacio_fems_black.png" />
     <None Remove="ticket_icon.png" />
     <None Remove="users_icon.png" />
@@ -33,6 +34,7 @@
     <Resource Include="logo.png" />
     <Resource Include="product_icon.png" />
     <Resource Include="product_icon.svg" />
+    <Resource Include="search_icon.png" />
     <Resource Include="spacio_fems_black.png" />
     <Resource Include="ticket_icon.png" />
     <Resource Include="users_icon.png" />
