@@ -63,5 +63,11 @@ namespace punto_venta
         {
 
         }
+
+        private void btnVer_Productos(object sender, RoutedEventArgs e)
+        {
+            Product_View popup = new Product_View();
+            popup.ShowDialog(); // Esto muestra la ventana emergente como un cuadro de diálogo modal
+        }
     }
 }

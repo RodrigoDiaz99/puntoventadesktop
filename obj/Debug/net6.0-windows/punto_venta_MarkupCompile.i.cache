@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\App.xaml
-41970405569
+51359987216
 2820656829
-111283626235
+13501389378
 225291168191
-CorteCaja.xaml;MainWindow.xaml;PopupWindow.xaml;Venta.xaml;
+CorteCaja.xaml;MainWindow.xaml;PopupWindow.xaml;Product_View.xaml;Venta.xaml;
 
 True
 

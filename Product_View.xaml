@@ -1,0 +1,23 @@
+﻿<Window x:Class="punto_venta.Product_View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:punto_venta"
+        mc:Ignorable="d"
+        Title="Product_View" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dataGridProductos" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Codigo Barras" Binding="{Binding codigo_barras}" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad_producto}" />
+                <DataGridTextColumn Header="Precio" Binding="{Binding precio_venta}" />
+                <DataGridTextColumn Header="Estatus" Binding="{Binding estatus}" />
+                
+            </DataGrid.Columns>
+            
+        </DataGrid>
+       
+    </Grid>
+</Window>

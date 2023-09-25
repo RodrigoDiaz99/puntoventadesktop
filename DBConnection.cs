@@ -2,14 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using punto_venta.models;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace punto_venta
 {
     public class DBConnection : DbContext
     {
+   
+        public DbSet<Productos> productos { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<Corte_Caja> corte_cajas { get; set; }
-
+       
         public bool IsConnectionSuccessful()
         {
             try
@@ -44,6 +47,8 @@ namespace punto_venta
 
           
         }
+    
 
     }
+   
 }

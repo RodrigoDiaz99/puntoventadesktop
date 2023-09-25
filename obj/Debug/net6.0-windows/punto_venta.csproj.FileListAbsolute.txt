@@ -142,3 +142,5 @@ C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\Po
 C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\CorteCaja.baml
 C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\Venta.g.cs
 C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\Venta.baml
+C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\Product_View.g.cs
+C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\Product_View.baml

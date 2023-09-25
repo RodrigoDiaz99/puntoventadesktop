@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
         Title="Venta" Height="800" Width="1200">
-    <Grid Opacity="1">
+    <Grid Opacity="1" Cursor="Hand">
         <Grid.RowDefinitions>
             <RowDefinition Height="148*"/>
             <RowDefinition Height="90*"/>
@@ -20,7 +20,7 @@
                 <ImageBrush  Stretch="Fill" TileMode="FlipX" ImageSource="/ticket_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="168,10,0,0" VerticalAlignment="Top" Height="49" Width="64" RenderTransformOrigin="1.047,0.45" Cursor="Hand" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="168,10,0,0" VerticalAlignment="Top" Height="49" Width="64" RenderTransformOrigin="1.047,0.45" Cursor="Hand" BorderBrush="{x:Null}" Click="btnVer_Productos">
             <Button.Background>
                 <ImageBrush ImageSource="/product_icon.png"/>
             </Button.Background>
@@ -50,7 +50,7 @@
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="75"><Run Text="Ver "/><LineBreak/><Run Text="Productos"/></TextBlock>
 
         </Label>
-        <Label HorizontalAlignment="Left" Margin="285,70,0,0" VerticalAlignment="Top" Width="92" Height="43">
+        <Label HorizontalAlignment="Left" Margin="298,74,0,0" VerticalAlignment="Top" Width="92" Height="43">
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="82"><Run Text="Ver"/><LineBreak/><Run Text="Membresias"/></TextBlock>
         </Label>
         <Label HorizontalAlignment="Left" Margin="444,74,0,0" VerticalAlignment="Top" Width="80" Height="58">
@@ -68,10 +68,10 @@
             <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Ver"/><LineBreak/><Run Language="es-es" Text="Usuarios"/><LineBreak/><Run/></TextBlock>
         </Label>
         <TextBlock HorizontalAlignment="Left" Margin="114,39,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FFC3C9D6" Height="15" x:Name="txtFecha"><Run Language="es-es" Text=""/></TextBlock>
-        <Label Content="Fecha:" HorizontalAlignment="Left" Margin="25,9,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Width="58"/>
-        <Label Content="Hora:" HorizontalAlignment="Left" Margin="443,16,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Height="24"/>
+        <Label Content="Fecha:" HorizontalAlignment="Left" Margin="28,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Width="58"/>
+        <Label Content="Hora:" HorizontalAlignment="Left" Margin="427,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Height="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="523,44,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" Background="#FFC3C9D6" Height="16" x:Name="txtHora"/>
-        <Label Content="Vendedor:" HorizontalAlignment="Left" Margin="841,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" Height="24"/>
+        <Label Content="Vendedor:" HorizontalAlignment="Left" Margin="826,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="96" Height="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="943,41,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FFC3C9D6" Height="16" x:Name="txtUsuario"/>
         <Label Content="Código de Articulo" HorizontalAlignment="Left" Margin="102,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="132"/>
         <TextBox HorizontalAlignment="Left" Margin="331,37,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="512" TextChanged="TextBox_TextChanged_1"/>
