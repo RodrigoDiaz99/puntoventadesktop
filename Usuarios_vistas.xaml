@@ -1,0 +1,23 @@
+﻿<Window x:Class="punto_venta.Usuarios_vistas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:punto_venta"
+        mc:Ignorable="d"
+        Title="Usuarios_vistas" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dataGridUsuarios" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Nombre (s)" Binding="{Binding nombre}" />
+                <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding apellido_paterno}" />
+                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellido_materno}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding usuario}" />
+                <DataGridTextColumn Header="Codigo Usuario" Binding="{Binding codigo_usuario}" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>

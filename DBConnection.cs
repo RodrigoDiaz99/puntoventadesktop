@@ -12,7 +12,8 @@ namespace punto_venta
         public DbSet<Productos> productos { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<Corte_Caja> corte_cajas { get; set; }
-       
+        public DbSet<Membresia> tipo_membresias { get; set; }
+
         public bool IsConnectionSuccessful()
         {
             try

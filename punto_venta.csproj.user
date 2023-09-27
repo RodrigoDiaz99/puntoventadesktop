@@ -10,10 +10,16 @@
     <Compile Update="CorteCaja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="membresias_vistas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Product_View.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Usuarios_vistas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Venta.xaml.cs">
@@ -24,10 +30,16 @@
     <Page Update="CorteCaja.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="membresias_vistas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="PopupWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Product_View.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Usuarios_vistas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Venta.xaml">

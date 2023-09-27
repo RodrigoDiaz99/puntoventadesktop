@@ -1,4 +1,5 @@
-﻿using System;
+﻿using punto_venta.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,15 +60,73 @@ namespace punto_venta
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void btnVer_Productos(object sender, RoutedEventArgs e)
         {
             Product_View popup = new Product_View();
             popup.ShowDialog(); // Esto muestra la ventana emergente como un cuadro de diálogo modal
+        }
+
+        private void btnVer_Membresias(object sender, RoutedEventArgs e)
+        {
+            membresias_vistas popup = new membresias_vistas();
+            popup.ShowDialog();
+        }
+
+        private void btnVer_Usuarios(object sender, RoutedEventArgs e)
+        {
+            Usuarios_vistas popup = new Usuarios_vistas();
+            popup.ShowDialog();
+        }
+
+        private void btnValidar_membresias(object sender, RoutedEventArgs e)
+        {
+            
+
+        }
+
+        private void btnBuscar_Producto(object sender, RoutedEventArgs e)
+        {
+            string inputBuscar = txtCodigoProducto.Text;
+            using (var context = new DBConnection())
+            {
+                try
+                {
+                    int id;
+                    List<Productos> resultados = null; // Inicializa la lista fuera del bloque
+
+                    if (int.TryParse(inputBuscar, out id))
+                    {
+                        // Si el valor ingresado es un número, busca por ID
+                        resultados = context.productos
+                               .Where(u => u.id == id)
+                               .ToList();
+                    }
+                    else
+                    {
+                        // Si el valor ingresado no es un número, busca por nombre o código de barras
+                        resultados = context.productos
+                              .Where(u => u.nombre_producto == inputBuscar)
+                              .Where(u=>u.codigo_barras == inputBuscar)
+                              .ToList();
+
+                    }
+                    var hola = resultados;
+                    dataGridVenta.ItemsSource = resultados;
+
+
+                    // Resto del código para procesar los resultados
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener los resultados: " + ex.Message);
+
+                }
+
+
+
+            }
         }
     }
 }

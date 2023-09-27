@@ -25,7 +25,7 @@
                 <ImageBrush ImageSource="/product_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="311,11,0,0" VerticalAlignment="Top" Cursor="Hand" Height="49" Width="66" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="311,11,0,0" VerticalAlignment="Top" Cursor="Hand" Height="49" Width="66" BorderBrush="{x:Null}" Click="btnVer_Membresias">
             <Button.Background>
                 <ImageBrush ImageSource="/ver_icon.png"/>
             </Button.Background>
@@ -35,7 +35,7 @@
                 <ImageBrush ImageSource="/asignar_icon.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="596,8,0,0" VerticalAlignment="Top" Height="51" Width="60">
+        <Button Content="" HorizontalAlignment="Left" Margin="596,8,0,0" VerticalAlignment="Top" Height="51" Width="60" Click="btnValidar_membresias">
             <Button.Background>
                 <ImageBrush ImageSource="/validar_icon.png"/>
             </Button.Background>
@@ -59,7 +59,7 @@
         <Label HorizontalAlignment="Left" Margin="587,74,0,0" VerticalAlignment="Top" Width="78" Height="43">
             <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Validar"/><LineBreak/><Run Text=" Membresias"/><LineBreak/><Run/></TextBlock>
         </Label>
-        <Button Content="" HorizontalAlignment="Left" Margin="749,6,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="53" Width="66" Click="Button_Click_2">
+        <Button Content="" HorizontalAlignment="Left" Margin="749,6,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="53" Width="66" Click="btnVer_Usuarios">
             <Button.Background>
                 <ImageBrush ImageSource="/users_icon.png"/>
             </Button.Background>
@@ -74,17 +74,17 @@
         <Label Content="Vendedor:" HorizontalAlignment="Left" Margin="826,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="96" Height="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="943,41,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FFC3C9D6" Height="16" x:Name="txtUsuario"/>
         <Label Content="Código de Articulo" HorizontalAlignment="Left" Margin="102,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="132"/>
-        <TextBox HorizontalAlignment="Left" Margin="331,37,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="512" TextChanged="TextBox_TextChanged_1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="919,27,0,0" Grid.Row="2" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="46" Width="48" RenderTransformOrigin="0.49,0.577">
+        <TextBox HorizontalAlignment="Left" Margin="331,37,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="512"  x:Name="txtCodigoProducto"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="919,27,0,0" Grid.Row="2" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="46" Width="48" RenderTransformOrigin="0.49,0.577" Click="btnBuscar_Producto">
             <Button.Background>
                 <ImageBrush ImageSource="/search_icon.png"/>
             </Button.Background>
         </Button>
-        <DataGrid Grid.Row="2" Margin="0,103,0,27" Grid.RowSpan="2" HorizontalAlignment="Center" Width="1180" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid Grid.Row="2" Margin="0,103,0,27" Grid.RowSpan="2" HorizontalAlignment="Center" Width="1180" SelectionChanged="DataGrid_SelectionChanged" x:Name="dataGridVenta">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
                 <DataGridTextColumn Header="Codigo Barras" Binding="{Binding codigo_barras}" />
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad}" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding CantidadBusqueda}" />
                 <DataGridTextColumn Header="Categoria" Binding="{Binding categoria}" />
                 <DataGridTextColumn Header="Nombre Producto" Binding="{Binding nombre_producto}" />
                 <DataGridTextColumn Header="Precio Unitario" Binding="{Binding precio_unitario}" />
