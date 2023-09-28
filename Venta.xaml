@@ -80,16 +80,11 @@
                 <ImageBrush ImageSource="/search_icon.png"/>
             </Button.Background>
         </Button>
-        <DataGrid Grid.Row="2" Margin="0,103,0,27" Grid.RowSpan="2" HorizontalAlignment="Center" Width="1180" SelectionChanged="DataGrid_SelectionChanged" x:Name="dataGridVenta">
+        <DataGrid Grid.Row="2" Margin="0,103,0,27" Grid.RowSpan="2" AutoGenerateColumns="True" HorizontalAlignment="Center" Width="1180" SelectionChanged="DataGrid_SelectionChanged" x:Name="dataGridVenta">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
-                <DataGridTextColumn Header="Codigo Barras" Binding="{Binding codigo_barras}" />
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding CantidadBusqueda}" />
-                <DataGridTextColumn Header="Categoria" Binding="{Binding categoria}" />
-                <DataGridTextColumn Header="Nombre Producto" Binding="{Binding nombre_producto}" />
-                <DataGridTextColumn Header="Precio Unitario" Binding="{Binding precio_unitario}" />
-                <DataGridTextColumn Header="Total Producto" Binding="{Binding total_productos}" />
+              
             </DataGrid.Columns>
+
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="28,43,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="150" FontWeight="Bold" FontSize="22" Cursor="Hand"/>
         <Label Content="Importe" HorizontalAlignment="Left" Margin="28,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="18"/>

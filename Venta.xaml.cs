@@ -89,44 +89,70 @@ namespace punto_venta
         private void btnBuscar_Producto(object sender, RoutedEventArgs e)
         {
             string inputBuscar = txtCodigoProducto.Text;
+            List<ProductoViewModel> resultadosViewModel = new List<ProductoViewModel>();
+
             using (var context = new DBConnection())
             {
                 try
                 {
-                    int id;
-                    List<Productos> resultados = null; // Inicializa la lista fuera del bloque
+                    List<Productos> resultados = null;
 
-                    if (int.TryParse(inputBuscar, out id))
+                    if (int.TryParse(inputBuscar, out int id))
                     {
-                        // Si el valor ingresado es un número, busca por ID
+                        // Buscar por ID
                         resultados = context.productos
-                               .Where(u => u.id == id)
-                               .ToList();
+                            .Where(u => u.id == id)
+                            .ToList();
                     }
                     else
                     {
-                        // Si el valor ingresado no es un número, busca por nombre o código de barras
+                        // Buscar por nombre o código de barras
                         resultados = context.productos
-                              .Where(u => u.nombre_producto == inputBuscar)
-                              .Where(u=>u.codigo_barras == inputBuscar)
-                              .ToList();
-
+                            .Where(u => u.nombre_producto.Contains(inputBuscar) || u.codigo_barras == inputBuscar)
+                            .ToList();
                     }
-                    var hola = resultados;
-                    dataGridVenta.ItemsSource = resultados;
+
+                    if (resultados.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron resultados.");
+                        return;
+                    }
+
+                    foreach (var producto in resultados)
+                    {
+                        ProductoViewModel productoViewModel = resultadosViewModel.FirstOrDefault(p => p.Id == producto.id);
+
+                        if (productoViewModel != null)
+                        {
+                            // Si el producto ya existe en resultadosViewModel, actualiza la cantidad y el total.
+                            productoViewModel.Cantidad += 1;
+                            productoViewModel.TotalProducto = productoViewModel.Cantidad * productoViewModel.PrecioUnitario;
+                        }
+                        else
+                        {
+                            // Si el producto no existe en resultadosViewModel, agrégalo.
+                            productoViewModel = new ProductoViewModel
+                            {
+                                Id = producto.id,
+                                NombreProducto = producto.nombre_producto,
+                                CodigoBarras = producto.codigo_barras,
+                                PrecioUnitario = producto.precio_venta,
+                                Cantidad = 1, // Inicializamos con cantidad 1 por defecto
+                                TotalProducto = producto.precio_venta
+                            };
+                            resultadosViewModel.Add(productoViewModel);
+                        }
+                    }
 
 
-                    // Resto del código para procesar los resultados
+                    dataGridVenta.ItemsSource = resultadosViewModel;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al obtener los resultados: " + ex.Message);
-
                 }
-
-
-
             }
         }
+
     }
 }
