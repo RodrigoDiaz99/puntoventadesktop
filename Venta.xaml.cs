@@ -101,7 +101,7 @@ namespace punto_venta
                     {
                         // Buscar por ID
                         resultados = context.productos
-                            .Where(u => u.id == id)
+                            .Where(u => u.id == id || u.codigo_barras == inputBuscar)
                             .ToList();
                     }
                     else
@@ -144,7 +144,6 @@ namespace punto_venta
                         }
                     }
 
-
                     dataGridVenta.ItemsSource = resultadosViewModel;
                 }
                 catch (Exception ex)
@@ -153,6 +152,7 @@ namespace punto_venta
                 }
             }
         }
+
 
     }
 }
