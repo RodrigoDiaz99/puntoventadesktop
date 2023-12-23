@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\obj\Debug\net6.0-windows\
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\
 punto_venta
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\App.xaml
-71633068521
-2820656829
-15-972364746
-225291168191
-CorteCaja.xaml;MainWindow.xaml;membresias_vistas.xaml;PopupWindow.xaml;Product_View.xaml;Usuarios_vistas.xaml;Venta.xaml;
+C:\dev\puntoventadesktop\App.xaml
+9973928575
+2-648964516
+17896314272
+225365271923
+PopupWindow.xaml;views\Asignar.xaml;views\AsignarMembresias.xaml;views\CorteCaja.xaml;views\MainWindow.xaml;views\membresias_vistas.xaml;views\Product_View.xaml;views\Usuarios_vistas.xaml;views\Venta.xaml;
 
 False
 

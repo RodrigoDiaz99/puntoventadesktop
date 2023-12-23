@@ -7,42 +7,54 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CorteCaja.xaml.cs">
+    <Compile Update="views\CorteCaja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="membresias_vistas.xaml.cs">
+    <Compile Update="views\membresias_vistas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Product_View.xaml.cs">
+    <Compile Update="views\Product_View.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Usuarios_vistas.xaml.cs">
+    <Compile Update="views\Usuarios_vistas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Venta.xaml.cs">
+    <Compile Update="views\Venta.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\AsignarMembresias.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\Asignar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CorteCaja.xaml">
+    <Page Update="views\CorteCaja.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="membresias_vistas.xaml">
+    <Page Update="views\membresias_vistas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PopupWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Product_View.xaml">
+    <Page Update="views\Product_View.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Usuarios_vistas.xaml">
+    <Page Update="views\Usuarios_vistas.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Venta.xaml">
+    <Page Update="views\Venta.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\AsignarMembresias.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Asignar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

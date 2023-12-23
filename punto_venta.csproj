@@ -24,22 +24,23 @@
     <None Remove="users_icon.png" />
     <None Remove="validar_icon.png" />
     <None Remove="ver_icon.png" />
+    <None Remove="views\background.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="asignar_icon.png" />
-    <Resource Include="background.jpeg" />
-    <Resource Include="background.png" />
-    <Resource Include="corte_caja.png" />
-    <Resource Include="logo.png" />
-    <Resource Include="product_icon.png" />
-    <Resource Include="product_icon.svg" />
-    <Resource Include="search_icon.png" />
-    <Resource Include="spacio_fems_black.png" />
-    <Resource Include="ticket_icon.png" />
-    <Resource Include="users_icon.png" />
-    <Resource Include="validar_icon.png" />
-    <Resource Include="ver_icon.png" />
+    <Resource Include="resources\icons\asignar_icon.png" />
+    <Resource Include="resources\backgrounds\background.jpeg" />
+    <Resource Include="resources\backgrounds\background.png" />
+    <Resource Include="resources\icons\corte_caja.png" />
+    <Resource Include="resources\logos\logo.png" />
+    <Resource Include="resources\icons\product_icon.png" />
+    <Resource Include="resources\icons\product_icon.svg" />
+    <Resource Include="resources\icons\search_icon.png" />
+    <Resource Include="resources\logos\spacio_fems_black.png" />
+    <Resource Include="resources\icons\ticket_icon.png" />
+    <Resource Include="resources\icons\users_icon.png" />
+    <Resource Include="resources\icons\validar_icon.png" />
+    <Resource Include="resources\icons\ver_icon.png" />
   </ItemGroup>
 
   <ItemGroup>

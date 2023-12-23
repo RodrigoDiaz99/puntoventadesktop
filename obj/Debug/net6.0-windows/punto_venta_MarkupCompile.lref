@@ -1,10 +1,12 @@
 ﻿
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\App.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\CorteCaja.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\MainWindow.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\PopupWindow.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\Venta.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\Product_View.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\membresias_vistas.xaml;;
-FC:\Users\rodrigo.diaz\Source\Repos\puntoventadesktop\Usuarios_vistas.xaml;;
+FC:\dev\puntoventadesktop\App.xaml;;
+FC:\dev\puntoventadesktop\PopupWindow.xaml;;
+FC:\dev\puntoventadesktop\views\Asignar.xaml;;
+FC:\dev\puntoventadesktop\views\AsignarMembresias.xaml;;
+FC:\dev\puntoventadesktop\views\CorteCaja.xaml;;
+FC:\dev\puntoventadesktop\views\MainWindow.xaml;;
+FC:\dev\puntoventadesktop\views\membresias_vistas.xaml;;
+FC:\dev\puntoventadesktop\views\Product_View.xaml;;
+FC:\dev\puntoventadesktop\views\Usuarios_vistas.xaml;;
+FC:\dev\puntoventadesktop\views\Venta.xaml;;
 

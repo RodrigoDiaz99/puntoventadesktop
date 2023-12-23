@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -153,6 +154,11 @@ namespace punto_venta
             }
         }
 
+        private void btnAsignar_Membresias(object sender, RoutedEventArgs e)
+        {
+            AsignarMembresias asignarMembresias = new AsignarMembresias();
+            asignarMembresias.ShowDialog(); 
 
+        }
     }
 }
