@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\dev\puntoventadesktop\App.xaml
-9973928575
+10-2138837057
 2-648964516
-17896314272
+191382201651
 225365271923
-PopupWindow.xaml;views\Asignar.xaml;views\AsignarMembresias.xaml;views\CorteCaja.xaml;views\MainWindow.xaml;views\membresias_vistas.xaml;views\Product_View.xaml;views\Usuarios_vistas.xaml;views\Venta.xaml;
+PopupWindow.xaml;views\AgregarProductos.xaml;views\Asignar.xaml;views\AsignarMembresias.xaml;views\CorteCaja.xaml;views\MainWindow.xaml;views\membresias_vistas.xaml;views\Product_View.xaml;views\Usuarios_vistas.xaml;views\Venta.xaml;
 
 False
 

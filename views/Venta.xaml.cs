@@ -1,7 +1,10 @@
 ﻿using punto_venta.models;
+using punto_venta.views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +25,9 @@ namespace punto_venta
     /// </summary>
     public partial class Venta : Window
     {
+
+        private ObservableCollection<CarritoModel> venta;
+
         public Venta()
         {
             InitializeComponent();
@@ -30,38 +36,14 @@ namespace punto_venta
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
+            venta = new ObservableCollection<CarritoModel>();
+            dataGridProductosVenta.ItemsSource = venta;
+
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
             txtHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
 
         private void btnVer_Productos(object sender, RoutedEventArgs e)
         {
@@ -81,84 +63,63 @@ namespace punto_venta
             popup.ShowDialog();
         }
 
-        private void btnValidar_membresias(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
-
-        private void btnBuscar_Producto(object sender, RoutedEventArgs e)
-        {
-            string inputBuscar = txtCodigoProducto.Text;
-            List<ProductoViewModel> resultadosViewModel = new List<ProductoViewModel>();
-
-            using (var context = new DBConnection())
-            {
-                try
-                {
-                    List<Productos> resultados = null;
-
-                    if (int.TryParse(inputBuscar, out int id))
-                    {
-                        // Buscar por ID
-                        resultados = context.productos
-                            .Where(u => u.id == id || u.codigo_barras == inputBuscar)
-                            .ToList();
-                    }
-                    else
-                    {
-                        // Buscar por nombre o código de barras
-                        resultados = context.productos
-                            .Where(u => u.nombre_producto.Contains(inputBuscar) || u.codigo_barras == inputBuscar)
-                            .ToList();
-                    }
-
-                    if (resultados.Count == 0)
-                    {
-                        MessageBox.Show("No se encontraron resultados.");
-                        return;
-                    }
-
-                    foreach (var producto in resultados)
-                    {
-                        ProductoViewModel productoViewModel = resultadosViewModel.FirstOrDefault(p => p.Id == producto.id);
-
-                        if (productoViewModel != null)
-                        {
-                            // Si el producto ya existe en resultadosViewModel, actualiza la cantidad y el total.
-                            productoViewModel.Cantidad += 1;
-                            productoViewModel.TotalProducto = productoViewModel.Cantidad * productoViewModel.PrecioUnitario;
-                        }
-                        else
-                        {
-                            // Si el producto no existe en resultadosViewModel, agrégalo.
-                            productoViewModel = new ProductoViewModel
-                            {
-                                Id = producto.id,
-                                NombreProducto = producto.nombre_producto,
-                                CodigoBarras = producto.codigo_barras,
-                                PrecioUnitario = producto.precio_venta,
-                                Cantidad = 1, // Inicializamos con cantidad 1 por defecto
-                                TotalProducto = producto.precio_venta
-                            };
-                            resultadosViewModel.Add(productoViewModel);
-                        }
-                    }
-
-                    dataGridVenta.ItemsSource = resultadosViewModel;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al obtener los resultados: " + ex.Message);
-                }
-            }
-        }
-
         private void btnAsignar_Membresias(object sender, RoutedEventArgs e)
         {
             AsignarMembresias asignarMembresias = new AsignarMembresias();
-            asignarMembresias.ShowDialog(); 
+            asignarMembresias.ShowDialog();
 
+        }
+
+        private void btnVerAgregarProductos(object sender, RoutedEventArgs e)
+        {
+            AgregarProductos agregarProductos = new AgregarProductos(this);
+            agregarProductos.ShowDialog();
+        }
+
+        private void btnVerRealizarCorte(object sender, RoutedEventArgs e)
+        {
+            CorteCaja corteCaja = new CorteCaja(1);
+            corteCaja.ShowDialog();
+        }
+
+        private void btnValidar_membresias(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void agregarProducto(CarritoModel producto)
+        {
+            // Supongamos que 'producto' es el nuevo producto que deseas agregar
+
+            // Buscar si ya existe un producto con el mismo internal_id y esMembresia
+            CarritoModel existingProduct = venta.FirstOrDefault(item => item.internal_id == producto.internal_id && item.esMembresia == producto.esMembresia);
+
+            if (existingProduct != null)
+            {
+                // El producto ya existe, simplemente incrementar la cantidad
+                existingProduct.CantidadCarrito += producto.CantidadCarrito ?? 1; // Sumar 1 si la cantidad es nula
+                existingProduct.Subtotal += producto.Subtotal ?? 1; // Sumar 1 si la cantidad es nula
+            }
+            else
+            {
+                // El producto no existe, agregarlo a la colección
+                venta.Add(producto);
+            }
+
+            // Recalcular la suma de PrecioUnitario después de la posible modificación
+            double? sumPrecioUnitario = venta.Sum(item => item.Subtotal);
+            CollectionViewSource.GetDefaultView(dataGridProductosVenta.ItemsSource).Refresh();
+
+            // Formatear y mostrar en tus controles
+            string formattedSum = sumPrecioUnitario.HasValue ? sumPrecioUnitario.Value.ToString("C") : "N/A";
+            iImporte.Text = formattedSum;
+            iSubtotal.Text = formattedSum;
+            iTotal.Text = formattedSum;
         }
     }
 }

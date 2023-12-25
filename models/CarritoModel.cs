@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace punto_venta.models
 {
-    public class ProductoViewModel
+    public class CarritoModel
     {
-        [DisplayName("Identificador")]
-        public int Id { get; set; }
+        [DisplayName("internal_id")]
+        public int internal_id { get; set; }
         [DisplayName("Producto")]
         public string? NombreProducto { get; set; }
         [DisplayName("Código de Barras")]
         public string? CodigoBarras { get; set; }
         [DisplayName("Precio Unitario")]
         public double? PrecioUnitario { get; set; }
-        [DisplayName("Disponible")]
-        public string Cantidad { get; set; }
+        [DisplayName("Subtotal")]
+        public double? Subtotal { get; set; }
+        [DisplayName("Cantidad")]
+        public double? CantidadCarrito { get; set; }
         public bool? esMembresia { get; set; }
-
-       
     }
 }

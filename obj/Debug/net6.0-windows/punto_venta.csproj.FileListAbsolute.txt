@@ -234,3 +234,5 @@ C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\membresias_vistas.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Product_View.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Usuarios_vistas.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Venta.baml
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.g.cs
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.baml

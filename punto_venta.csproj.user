@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="views\AgregarProductos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\CorteCaja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +36,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="views\AgregarProductos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="views\CorteCaja.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -70,7 +70,7 @@ namespace punto_venta
                     }
                     else
                     {
-                        MessageBox.Show("Contraseña Incorrecta" );
+                        MessageBox.Show("El usuario o contraseña son incorrectos. Verifique los datos." );
                     }
 
                     // Resto del código para procesar los resultados
@@ -89,6 +89,10 @@ namespace punto_venta
        
            
         }
-      
+
+        private void txtUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

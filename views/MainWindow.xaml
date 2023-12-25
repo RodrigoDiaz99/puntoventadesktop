@@ -5,50 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="Inicio" Height="450" Width="800" Foreground="White">
+        Title="Inicio" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <Color x:Key="GradientStopColor1">#00FFFFFF</Color>
     </Window.Resources>
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black"/>
-            <GradientStop Color="#FFCAC5EC" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
     <Grid RenderTransformOrigin="1,1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="417*"/>
-            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="299*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid>
+
+            <Image Margin="162,33,162,277" Source="/resources/logos/spacio_fems_black.png" Panel.ZIndex="55"/>
+            <Label Content="¡Bienvenido!" FontSize="22" Margin="0,157,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Label Content="Ingresa tus datos" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid HorizontalAlignment="Center" Height="70" Margin="0,248,0,0" VerticalAlignment="Top" Width="324">
+
+                <TextBox Margin="115,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" x:Name="txtUsuario" Height="28" TextChanged="txtUsuario_TextChanged" Text="rodrigo.diaz1" HorizontalAlignment="Left"/>
+
+                <PasswordBox Margin="115,43,0,0" VerticalAlignment="Top" Width="209" x:Name="txtPassword" Height="27" Password="123456" HorizontalAlignment="Left"/>
+                <Label Content="Contraseña" FontSize="14" Foreground="#FF203052" Margin="0,43,0,0" VerticalAlignment="Top" Width="109" HorizontalAlignment="Left"/>
+                <Label Content="Correo/Usuario" FontSize="14" Foreground="#FF121D33" VerticalAlignment="Top" Width="109" Height="28" HorizontalAlignment="Left"/>
+            </Grid>
+            <Button Content="Acceder" HorizontalAlignment="Center" Margin="0,345,0,0" Click="BtnLogin_Click" VerticalAlignment="Top" FontWeight="Normal"/>
+        </Grid>
+        <Grid Grid.ColumnSpan="3" Margin="500,0,0,0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF050D3A"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF878787"/>
+                    <GradientStop Color="#FF414141" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
-            <Image HorizontalAlignment="Left" Height="111" Margin="199,32,0,0" VerticalAlignment="Top" Width="124" Source="/resources/logos/logo.png"/>
-            <Label Content="Acceso" FontSize="18" Foreground="#FFBEC8D8" HorizontalAlignment="Left" Margin="234,166,0,0" VerticalAlignment="Top" Width="89"  FontWeight="Bold"/>
-            <Label Content="Ingresa tus datos" FontSize="14" Foreground="#FFD3D8E2" HorizontalAlignment="Left" Margin="210,198,0,0" VerticalAlignment="Top" Width="156"/>
-
-            <TextBox HorizontalAlignment="Left" Margin="224,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" x:Name="txtUsuario" Height="23"/>
-
-            <PasswordBox HorizontalAlignment="Left" Margin="224,279,0,0" VerticalAlignment="Top" Width="230" x:Name="txtPassword" Height="19"/>
-            <Label Content="Contraseña" FontSize="14" Foreground="#FF203052" HorizontalAlignment="Left" Margin="97,271,0,0" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Correo/Usuario" FontSize="14" Foreground="#FF121D33" HorizontalAlignment="Left" Margin="97,237,0,0" VerticalAlignment="Top" Width="102" Height="28"/>
-            <Button Content="Acceder" HorizontalAlignment="Left" Margin="224,336,0,0" Click="BtnLogin_Click" Width="115" VerticalAlignment="Top" FontFamily="Arial Black" FontWeight="Bold"/>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Source="/resources/backgrounds/background.png" Height="418" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5" Width="288" Margin="-2,0,0,16" Opacity="0.915" IsEnabled="False">
-                <Image.OpacityMask>
-                    <LinearGradientBrush EndPoint="0,-1" StartPoint="0,0" SpreadMethod="Reflect" MappingMode="Absolute">
-
-                        <GradientStop Color="#FF6F5990" Offset="0"/>
-                        <GradientStop Offset="0.79" Color="Transparent"/>
-                        <GradientStop Color="#FF755CCA" Offset="0.617"/>
-                    </LinearGradientBrush>
-                </Image.OpacityMask>
+            <Image Source="/resources/backgrounds/background.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5" Opacity="0.5" IsEnabled="False">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

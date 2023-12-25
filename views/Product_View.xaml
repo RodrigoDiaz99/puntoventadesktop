@@ -14,10 +14,10 @@
                 <DataGridTextColumn Header="Cantidad" Binding="{Binding cantidad_producto}" />
                 <DataGridTextColumn Header="Precio" Binding="{Binding precio_venta}" />
                 <DataGridTextColumn Header="Estatus" Binding="{Binding estatus}" />
-                
+
             </DataGrid.Columns>
-            
+
         </DataGrid>
-       
+
     </Grid>
 </Window>
