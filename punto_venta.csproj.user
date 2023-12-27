@@ -34,6 +34,9 @@
     <Compile Update="views\Asignar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\Pago.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="views\AgregarProductos.xaml">
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\Asignar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Pago.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

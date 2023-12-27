@@ -236,3 +236,5 @@ C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Usuarios_vistas.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Venta.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.g.cs
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.baml
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Pago.g.cs
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Pago.baml

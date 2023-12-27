@@ -1,0 +1,27 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:punto_venta.views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="punto_venta.views.Pago" mc:Ignorable="d" Title="Pago" Height="480" Width="640">
+    <Grid Grid.IsSharedSizeScope="True" Height="480">
+        <Grid x:Name="grid" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Width="250" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left">
+                <Label Content="Total a pagar:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dTotalPagar" Width="120" VerticalAlignment="Center" Text="$0.00" TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Width="250" VerticalAlignment="Top" Margin="0,50,0,0" Height="25" HorizontalAlignment="Left">
+                <Label Content="Efectivo:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dEfectivo" Width="120" VerticalAlignment="Center" Text="$0.00" TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Width="250" VerticalAlignment="Top" Margin="0,100,0,0" Height="25" HorizontalAlignment="Left">
+                <Label Content="Tarjeta:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dTarjeta" Width="120" VerticalAlignment="Center" Text="$0.00" TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Width="250" VerticalAlignment="Top" Margin="0,150,0,0" Height="25" HorizontalAlignment="Left">
+                <Label Content="Pago total:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dTotalPagado" Width="120" VerticalAlignment="Center" Text="$0.00" TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Width="250" VerticalAlignment="Top" Margin="0,200,0,0" Height="25" HorizontalAlignment="Left">
+                <Label Content="Cambio:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dCambio" Grid.Column="1" Width="120" VerticalAlignment="Center" Text="$0.00" TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left"/>
+            </Grid>
+            <Button Content="Finalizar" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

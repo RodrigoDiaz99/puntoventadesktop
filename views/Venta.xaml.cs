@@ -27,7 +27,8 @@ namespace punto_venta
     {
 
         private ObservableCollection<CarritoModel> venta;
-
+        public double? sumPrecioUnitario;
+        public string formattedSum;
         public Venta()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace punto_venta
             timer.Start();
             venta = new ObservableCollection<CarritoModel>();
             dataGridProductosVenta.ItemsSource = venta;
+            formattedSum = "";
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -87,9 +89,10 @@ namespace punto_venta
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnCobrar_Click(object sender, RoutedEventArgs e)
         {
-
+            Pago pago = new Pago(this);
+            pago.ShowDialog();
         }
 
         public void agregarProducto(CarritoModel producto)
@@ -112,11 +115,11 @@ namespace punto_venta
             }
 
             // Recalcular la suma de PrecioUnitario después de la posible modificación
-            double? sumPrecioUnitario = venta.Sum(item => item.Subtotal);
+            sumPrecioUnitario = venta.Sum(item => item.Subtotal);
             CollectionViewSource.GetDefaultView(dataGridProductosVenta.ItemsSource).Refresh();
 
             // Formatear y mostrar en tus controles
-            string formattedSum = sumPrecioUnitario.HasValue ? sumPrecioUnitario.Value.ToString("C") : "N/A";
+            formattedSum = sumPrecioUnitario.HasValue ? sumPrecioUnitario.Value.ToString("C") : "N/A";
             iImporte.Text = formattedSum;
             iSubtotal.Text = formattedSum;
             iTotal.Text = formattedSum;
