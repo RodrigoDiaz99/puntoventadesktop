@@ -1,6 +1,9 @@
-.vs/ProjectEvaluation
-.vs/punto_venta
+# Ignore root-level folders
+/obj/
+/bin/
+/.vs/
 
-obj/
-obj
-/obj
+# Ignore all subfolders and files within obj, bin, and .vs
+/obj/**
+/bin/**
+/.vs/**

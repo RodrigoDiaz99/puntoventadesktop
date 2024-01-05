@@ -104,9 +104,17 @@ namespace punto_venta
 
             if (existingProduct != null)
             {
-                // El producto ya existe, simplemente incrementar la cantidad
-                existingProduct.CantidadCarrito += producto.CantidadCarrito ?? 1; // Sumar 1 si la cantidad es nula
-                existingProduct.Subtotal += producto.Subtotal ?? 1; // Sumar 1 si la cantidad es nula
+                if (existingProduct.esMembresia != true)
+                {
+                    // El producto ya existe, simplemente incrementar la cantidad
+                    existingProduct.CantidadCarrito += producto.CantidadCarrito ?? 1; // Sumar 1 si la cantidad es nula
+                    existingProduct.Subtotal += producto.Subtotal ?? 1; // Sumar 1 si la cantidad es nula
+                }
+                else
+                {
+                    MessageBox.Show("Solo puede agregar una membresía a la vez.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
+                }
+
             }
             else
             {

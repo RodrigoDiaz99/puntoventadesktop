@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="450" Width="895">
     <Grid>
         <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
@@ -19,7 +19,7 @@
                 <DataGridTemplateColumn Header="Acciones"  >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="Asignar">Show/Hide</Button>
+                            <Button Click="SeleccionarUsuario">Seleccionar</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

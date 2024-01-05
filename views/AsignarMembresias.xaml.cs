@@ -1,4 +1,6 @@
-﻿using System;
+﻿using punto_venta.models;
+using punto_venta.views;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
@@ -26,9 +28,9 @@ namespace punto_venta
             using (var context = new DBConnection())
             {
                 // Obtener todos los productos desde la base de datos
-                var clientes = (from x in context.users
-                                  where x.cliente == true
-                                  select x).ToList();
+                List<User> clientes = (from x in context.users
+                                       where x.cliente == true
+                                       select x).ToList();
 
                 // Configura la fuente de datos del DataGrid
                 dataGridClientes.ItemsSource = clientes;
@@ -41,6 +43,13 @@ namespace punto_venta
         {
             MessageBox.Show("Error al obtener los resultados: ");
 
+        }
+
+        private void SeleccionarUsuario(object sender, RoutedEventArgs e)
+        {
+            User usuarioSeleccionado = (User)dataGridClientes.SelectedItem;
+            UsuarioMembresia ventana = new UsuarioMembresia(usuarioSeleccionado);
+            ventana.ShowDialog();
         }
 
     }

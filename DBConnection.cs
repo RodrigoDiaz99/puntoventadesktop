@@ -13,6 +13,7 @@ namespace punto_venta
         public DbSet<User> users { get; set; }
         public DbSet<Corte_Caja> corte_cajas { get; set; }
         public DbSet<Membresia> tipo_membresias { get; set; }
+        public DbSet<Carritos> carritos { get; set; }
 
         public bool IsConnectionSuccessful()
         {

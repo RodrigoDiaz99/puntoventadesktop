@@ -17,7 +17,6 @@ namespace punto_venta.views
         public AgregarProductos(Venta venta)
         {
             InitializeComponent();
-            InitializeComponent();
             this.venta = venta;
         }
 

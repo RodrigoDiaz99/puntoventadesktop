@@ -238,3 +238,8 @@ C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.g.cs
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\AgregarProductos.baml
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Pago.g.cs
 C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\Pago.baml
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\UsuarioMembresia.g.cs
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\views\UsuarioMembresia.baml
+C:\dev\puntoventadesktop\bin\Debug\net6.0-windows\punto_venta.dll.config
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\punto_venta.Properties.Resources.resources
+C:\dev\puntoventadesktop\obj\Debug\net6.0-windows\punto_venta.csproj.GenerateResource.cache
