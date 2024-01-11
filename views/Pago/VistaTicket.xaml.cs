@@ -12,16 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace punto_venta
+namespace punto_venta.views.Pago
 {
     /// <summary>
-    /// Lógica de interacción para Window1.xaml
+    /// Lógica de interacción para VistaTicket.xaml
     /// </summary>
-    public partial class Asignar : Window
+    public partial class VistaTicket : Window
     {
-        public Asignar()
+        private Pagos pagos;
+        public VistaTicket(Pagos pagos)
         {
             InitializeComponent();
+            this.pagos = pagos;
         }
     }
 }

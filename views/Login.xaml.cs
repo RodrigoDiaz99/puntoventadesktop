@@ -10,11 +10,11 @@ using System.Linq;
 namespace punto_venta
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
@@ -52,16 +52,16 @@ namespace punto_venta
                         var resultadoCorte = context.corte_cajas
                             .Where(u => u.lActivo==true)
                             .Where(u=>u.users_id==userId)
-                            .ToList();
-                        if (resultadoCorte.Count > 0)
+                            .FirstOrDefault();
+                        if (resultadoCorte != null)
                         {
-                            Venta ventanaPuntoVenta = new Venta();
+                            Venta ventanaPuntoVenta = new Venta(userId, resultadoCorte.id);
                             ventanaPuntoVenta.Show();
                             this.Close();
                         }
                         else
                         {
-                            CorteCaja ventanaCorteCaja = new CorteCaja(userId);
+                            AperturaCaja ventanaCorteCaja = new AperturaCaja(userId);
                             ventanaCorteCaja.Show();
                             this.Close();
                         }
@@ -70,7 +70,7 @@ namespace punto_venta
                     }
                     else
                     {
-                        MessageBox.Show("El usuario o contraseña son incorrectos. Verifique los datos." );
+                        MessageBox.Show("El usuario o contraseña son incorrectos. Verifique los datos.");
                     }
 
                     // Resto del código para procesar los resultados

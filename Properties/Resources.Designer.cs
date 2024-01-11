@@ -59,5 +59,30 @@ namespace punto_venta.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///
+        ///&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///    &lt;title&gt;&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;body style=&quot;font-family: &apos;Times New Roman&apos;&quot;&gt;
+        ///    &lt;div align=&quot;center&quot; style=&quot;width: 400px; &quot;&gt;
+        ///        &lt;hr /&gt;
+        ///        &lt;img src=&quot;../../resources\logos\spacio_fems_black.png&quot; alt=&quot;&quot; style=&quot;width: 200px; height: auto;&quot;&gt;
+        ///        &lt;table  align=&quot;center&quot;&gt;
+        ///            &lt;tr style=&quot;text-align: center;&quot;&gt;
+        ///                &lt;td colspan=&quot;2&quot;&gt;Folio: @Ticket&lt;/td&gt;
+        ///            &lt;/ [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Ticket {
+            get {
+                return ResourceManager.GetString("Ticket", resourceCulture);
+            }
+        }
     }
 }

@@ -18,21 +18,15 @@ namespace punto_venta
     /// <summary>
     /// Lógica de interacción para CorteCaja.xaml
     /// </summary>
-
-    public partial class CorteCaja : Window
+    public partial class AperturaCaja : Window
     {
         private int userId; // Declara una variable miembro para almacenar userId
-        public CorteCaja(int userId)
+        private int ; // Declara una variable miembro para almacenar userId
+        public AperturaCaja(int userId)
         {
             InitializeComponent();
             this.userId = userId; // Asigna el valor de userId al campo de la clase
 
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-           
         }
 
         private void btnDineroInicial(object sender, RoutedEventArgs e)
@@ -55,7 +49,7 @@ namespace punto_venta
                     {
                         context.corte_cajas.Add(nuevoCorte);
                         context.SaveChanges();
-                        Venta ventanaPuntoVenta = new Venta();
+                        Venta ventanaPuntoVenta = new Venta(userId, nuevoCorte.id);
                         ventanaPuntoVenta.Show();
                         this.Close();
 

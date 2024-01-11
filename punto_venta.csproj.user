@@ -10,19 +10,31 @@
     <Compile Update="views\AgregarProductos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\CorteCaja.xaml.cs">
+    <Compile Update="views\Caja\CerrarCaja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\membresias_vistas.xaml.cs">
+    <Compile Update="views\Caja\CuadrarCaja.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\Caja\ResultadoCaja.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\Caja\AperturaCaja.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\Membresias\membresias_vistas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\Pago\VistaTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\Product_View.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\UsuarioMembresia.xaml.cs">
+    <Compile Update="views\Membresias\UsuarioMembresia.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="views\Usuarios_vistas.xaml.cs">
@@ -31,13 +43,10 @@
     <Compile Update="views\Venta.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\AsignarMembresias.xaml.cs">
+    <Compile Update="views\Membresias\AsignarMembresias.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\Asignar.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="views\Pago.xaml.cs">
+    <Compile Update="views\Pago\Pagos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -45,19 +54,31 @@
     <Page Update="views\AgregarProductos.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="views\CorteCaja.xaml">
+    <Page Update="views\Caja\CerrarCaja.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="views\membresias_vistas.xaml">
+    <Page Update="views\Caja\CuadrarCaja.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Caja\ResultadoCaja.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Caja\AperturaCaja.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Membresias\membresias_vistas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PopupWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="views\Pago\VistaTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="views\Product_View.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="views\UsuarioMembresia.xaml">
+    <Page Update="views\Membresias\UsuarioMembresia.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\Usuarios_vistas.xaml">
@@ -66,13 +87,10 @@
     <Page Update="views\Venta.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="views\AsignarMembresias.xaml">
+    <Page Update="views\Membresias\AsignarMembresias.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="views\Asignar.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="views\Pago.xaml">
+    <Page Update="views\Pago\Pagos.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

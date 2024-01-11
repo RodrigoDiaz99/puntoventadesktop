@@ -20,7 +20,7 @@ namespace punto_venta.models
         [DisplayName("Subtotal")]
         public double? Subtotal { get; set; }
         [DisplayName("Cantidad")]
-        public double? CantidadCarrito { get; set; }
-        public bool? esMembresia { get; set; }
+        public int CantidadCarrito { get; set; }
+        public bool esMembresia { get; set; }
     }
 }

@@ -1,0 +1,24 @@
+﻿<Window x:Class="punto_venta.views.Pago.VistaTicket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:punto_venta.views.Pago"
+        mc:Ignorable="d"
+        Title="Ticket de venta" Height="450" Width="313">
+    <Grid>
+        <Grid Height="360" Width="296">
+            <Image Margin="100,0,100,286" Source="/resources/logos/spacio_fems_black.png" Stretch="Fill"/>
+            <Label Content="Cajero:" HorizontalAlignment="Left" Margin="0,74,0,0" VerticalAlignment="Top"/>
+            <Label Content="USUARIO.SISTEMA" HorizontalAlignment="Left" Margin="45,74,0,0" VerticalAlignment="Top"/>
+            <Separator HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" Width="296"/>
+        </Grid>
+        <!--  <ScrollViewer VerticalAlignment="Top" Height="360"></ScrollViewer>
+-->
+        <Separator HorizontalAlignment="Center" Margin="0,365,0,0" VerticalAlignment="Top" Height="9" Width="313"/>
+        <Grid Width="245" Margin="0,379,0,10" HorizontalAlignment="Center">
+            <Button Content="Terminar" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Content="Imprimir" HorizontalAlignment="Left" Margin="158,0,0,0" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

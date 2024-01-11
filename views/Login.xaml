@@ -1,4 +1,4 @@
-﻿<Window x:Class="punto_venta.MainWindow"
+﻿<Window x:Class="punto_venta.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <Grid>
 
-            <Image Margin="162,33,162,277" Source="/resources/logos/spacio_fems_black.png" Panel.ZIndex="55"/>
+            <Image Margin="162,10,162,282" Source="/resources/logos/spacio_fems_black.png" Panel.ZIndex="55"/>
             <Label Content="¡Bienvenido!" FontSize="22" Margin="0,157,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             <Label Content="Ingresa tus datos" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Grid HorizontalAlignment="Center" Height="70" Margin="0,248,0,0" VerticalAlignment="Top" Width="324">

@@ -26,10 +26,12 @@ namespace punto_venta
     public partial class Venta : Window
     {
 
-        private ObservableCollection<CarritoModel> venta;
+        public ObservableCollection<CarritoModel> objetoVenta;
         public double? sumPrecioUnitario;
         public string formattedSum;
-        public Venta()
+        public int userId;
+        public int cortes_caja_id;
+        public Venta(int userId, int cortes_caja_id)
         {
             InitializeComponent();
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -37,11 +39,13 @@ namespace punto_venta
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
-            venta = new ObservableCollection<CarritoModel>();
-            dataGridProductosVenta.ItemsSource = venta;
+            objetoVenta = new ObservableCollection<CarritoModel>();
+            dataGridProductosVenta.ItemsSource = objetoVenta;
             formattedSum = "";
-
+            this.userId = userId;
+            this.cortes_caja_id = cortes_caja_id;
         }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             txtHora.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -80,7 +84,7 @@ namespace punto_venta
 
         private void btnVerRealizarCorte(object sender, RoutedEventArgs e)
         {
-            CorteCaja corteCaja = new CorteCaja(1);
+            AperturaCaja corteCaja = new AperturaCaja(1);
             corteCaja.ShowDialog();
         }
 
@@ -91,7 +95,7 @@ namespace punto_venta
 
         private void btnCobrar_Click(object sender, RoutedEventArgs e)
         {
-            Pago pago = new Pago(this);
+            Pagos pago = new Pagos(this);
             pago.ShowDialog();
         }
 
@@ -100,14 +104,14 @@ namespace punto_venta
             // Supongamos que 'producto' es el nuevo producto que deseas agregar
 
             // Buscar si ya existe un producto con el mismo internal_id y esMembresia
-            CarritoModel existingProduct = venta.FirstOrDefault(item => item.internal_id == producto.internal_id && item.esMembresia == producto.esMembresia);
+            CarritoModel existingProduct = objetoVenta.FirstOrDefault(item => item.internal_id == producto.internal_id && item.esMembresia == producto.esMembresia);
 
             if (existingProduct != null)
             {
                 if (existingProduct.esMembresia != true)
                 {
                     // El producto ya existe, simplemente incrementar la cantidad
-                    existingProduct.CantidadCarrito += producto.CantidadCarrito ?? 1; // Sumar 1 si la cantidad es nula
+                    existingProduct.CantidadCarrito += producto.CantidadCarrito; // Sumar 1 si la cantidad es nula
                     existingProduct.Subtotal += producto.Subtotal ?? 1; // Sumar 1 si la cantidad es nula
                 }
                 else
@@ -119,11 +123,11 @@ namespace punto_venta
             else
             {
                 // El producto no existe, agregarlo a la colección
-                venta.Add(producto);
+                objetoVenta.Add(producto);
             }
 
             // Recalcular la suma de PrecioUnitario después de la posible modificación
-            sumPrecioUnitario = venta.Sum(item => item.Subtotal);
+            sumPrecioUnitario = objetoVenta.Sum(item => item.Subtotal);
             CollectionViewSource.GetDefaultView(dataGridProductosVenta.ItemsSource).Refresh();
 
             // Formatear y mostrar en tus controles
