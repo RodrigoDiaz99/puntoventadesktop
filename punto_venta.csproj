@@ -19,6 +19,14 @@
     <None Remove="logo.png" />
     <None Remove="product_icon.png" />
     <None Remove="product_icon.svg" />
+    <None Remove="resources\icons\png\caja.png" />
+    <None Remove="resources\icons\png\carrito.png" />
+    <None Remove="resources\icons\png\membresia.png" />
+    <None Remove="resources\icons\png\tienda.png" />
+    <None Remove="resources\icons\png\usuariocheck.png" />
+    <None Remove="resources\icons\png\usuarioplus.png" />
+    <None Remove="resources\icons\png\usuariover.png" />
+    <None Remove="resources\plantillas\Ticket.html" />
     <None Remove="search_icon.png" />
     <None Remove="spacio_fems_black.png" />
     <None Remove="ticket_icon.png" />
@@ -29,19 +37,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="resources\icons\asignar_icon.png" />
+    <Resource Include="resources\icons\png\caja.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="resources\backgrounds\background.jpeg" />
     <Resource Include="resources\backgrounds\background.png" />
-    <Resource Include="resources\icons\corte_caja.png" />
+    <Resource Include="resources\icons\png\carrito.png" />
+    <Resource Include="resources\icons\png\membresia.png" />
+    <Resource Include="resources\icons\png\tienda.png" />
+    <Resource Include="resources\icons\png\usuariocheck.png" />
+    <Resource Include="resources\icons\png\usuarioplus.png" />
+    <Resource Include="resources\icons\png\usuariover.png" />
     <Resource Include="resources\logos\logo.png" />
-    <Resource Include="resources\icons\product_icon.png" />
-    <Resource Include="resources\icons\product_icon.svg" />
-    <Resource Include="resources\icons\search_icon.png" />
     <Resource Include="resources\logos\spacio_fems_black.png" />
-    <Resource Include="resources\icons\ticket_icon.png" />
-    <Resource Include="resources\icons\users_icon.png" />
-    <Resource Include="resources\icons\validar_icon.png" />
-    <Resource Include="resources\icons\ver_icon.png" />
+    <Resource Include="resources\plantillas\Ticket.html">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -73,7 +85,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -83,9 +95,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Update="resources\plantillas\Ticket.html">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="resources\icons\svg\" />
   </ItemGroup>
 
 

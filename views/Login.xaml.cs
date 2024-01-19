@@ -55,7 +55,7 @@ namespace punto_venta
                             .FirstOrDefault();
                         if (resultadoCorte != null)
                         {
-                            Venta ventanaPuntoVenta = new Venta(userId, resultadoCorte.id);
+                            Venta ventanaPuntoVenta = new Venta(true, userId, resultadoCorte.id);
                             ventanaPuntoVenta.Show();
                             this.Close();
                         }

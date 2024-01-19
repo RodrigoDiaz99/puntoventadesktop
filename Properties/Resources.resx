@@ -118,7 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="caja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\caja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\carrito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="membresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\membresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\plantillas\Ticket.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tienda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\tienda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuariocheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\usuariocheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarioplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\png\usuarioplus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

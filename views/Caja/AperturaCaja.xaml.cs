@@ -48,7 +48,7 @@ namespace punto_venta
                     {
                         context.corte_cajas.Add(nuevoCorte);
                         context.SaveChanges();
-                        Venta ventanaPuntoVenta = new Venta(userId, nuevoCorte.id);
+                        Venta ventanaPuntoVenta = new Venta(false, userId, nuevoCorte.id);
                         ventanaPuntoVenta.Show();
                         this.Close();
 

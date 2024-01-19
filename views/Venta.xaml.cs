@@ -32,7 +32,7 @@ namespace punto_venta
         public string formattedSum;
         public int userId;
         public int cortes_caja_id;
-        public Venta(int userId, int cortes_caja_id)
+        public Venta(bool sesionActiva, int userId, int cortes_caja_id)
         {
             InitializeComponent();
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -45,6 +45,11 @@ namespace punto_venta
             formattedSum = "";
             this.userId = userId;
             this.cortes_caja_id = cortes_caja_id;
+            if (sesionActiva)
+            {
+                // Mostrar ventana de aviso
+                     MessageBox.Show("La última vez que se cerró la aplicación, no se realizó un corte de caja. Se continuará con la sesión.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
+            }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -99,7 +104,7 @@ namespace punto_venta
             Pagos pago = new Pagos(this, cortes_caja_id);
             pago.ShowDialog();
         }
-    
+
         private void verificarCarrito()
         {
             btnCobrar.IsEnabled = (objetoVenta.Count > 0);

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="Venta" Height="733" Width="1280">
+        Title="Venta" Height="603" Width="1200">
+
     <Grid Opacity="1" Cursor="Hand">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>
@@ -20,68 +21,95 @@
             <RowDefinition Height="125*"/>
         </Grid.RowDefinitions>
 
-        <Grid HorizontalAlignment="Left" Height="126" Margin="10,0,0,0" VerticalAlignment="Center" Width="793" Grid.Column="1">
-            <Button Content="" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="66" Height="54" Cursor="Hand" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="btnVerRealizarCorte">
-                <Button.Background>
-                    <ImageBrush  Stretch="Fill" TileMode="FlipX" ImageSource="/resources/icons/ticket_icon.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="146,4,0,0" VerticalAlignment="Top" Height="49" Width="64" RenderTransformOrigin="1.047,0.45" Cursor="Hand" BorderBrush="{x:Null}" Click="btnVer_Productos">
-                <Button.Background>
-                    <ImageBrush ImageSource="/resources/icons/product_icon.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="289,5,0,0" VerticalAlignment="Top" Cursor="Hand" Height="49" Width="66" BorderBrush="{x:Null}" Click="btnVer_Membresias">
-                <Button.Background>
-                    <ImageBrush ImageSource="/resources/icons/ver_icon.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="429,4,0,0" VerticalAlignment="Top" Height="51" Width="66" RenderTransformOrigin="0.553,0.536" Cursor="Hand" BorderBrush="{x:Null}" Click="btnAsignar_Membresias">
-                <Button.Background>
-                    <ImageBrush ImageSource="/resources/icons/asignar_icon.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="574,2,0,0" VerticalAlignment="Top" Height="51" Width="60" Click="btnValidar_membresias">
-                <Button.Background>
-                    <ImageBrush ImageSource="/resources/icons/validar_icon.png"/>
-                </Button.Background>
-                <Button.BorderBrush>
-                    <ImageBrush ImageSource="/resources/icons/validar_icon.png"/>
-                </Button.BorderBrush>
-            </Button>
-            <Label HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" Width="85" Height="43">
-                <TextBlock Text="Realizar&#xA;Corte de Caja" TextAlignment="Center" VerticalAlignment="Center"/>
-            </Label>
-            <Label HorizontalAlignment="Left" Margin="136,61,0,0" VerticalAlignment="Top" Width="84" Height="43">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="75"><Run Text="Ver "/><LineBreak/><Run Text="Productos"/></TextBlock>
+        <Grid HorizontalAlignment="Left" Height="106" Margin="10,0,0,0" VerticalAlignment="Center" Width="793" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            </Label>
-            <Label HorizontalAlignment="Left" Margin="276,68,0,0" VerticalAlignment="Top" Width="92" Height="43">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Width="82"><Run Text="Ver"/><LineBreak/><Run Text="Membresias"/></TextBlock>
-            </Label>
-            <Label HorizontalAlignment="Left" Margin="422,68,0,0" VerticalAlignment="Top" Width="80" Height="58">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center"><Run Text="Asignar"/><LineBreak/><Run Text=" Membresias"/><LineBreak/><Run/></TextBlock>
-            </Label>
-            <Label HorizontalAlignment="Left" Margin="565,68,0,0" VerticalAlignment="Top" Width="78" Height="43">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Validar"/><LineBreak/><Run Text=" Membresias"/><LineBreak/><Run/></TextBlock>
-            </Label>
-            <Button Content="" HorizontalAlignment="Left" Margin="727,0,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="53" Width="66" Click="btnVer_Usuarios">
-                <Button.Background>
-                    <ImageBrush ImageSource="/resources/icons/users_icon.png"/>
-                </Button.Background>
-            </Button>
-            <Label HorizontalAlignment="Left" Margin="734,68,0,0" VerticalAlignment="Top" Width="52" Height="43">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Top"><Run Language="es-es" Text="Ver"/><LineBreak/><Run Language="es-es" Text="Usuarios"/><LineBreak/><Run/></TextBlock>
-            </Label>
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="93,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+
+                <Button  HorizontalAlignment="Center" VerticalAlignment="Top" Height="61" RenderTransformOrigin="1.047,0.45" Cursor="Hand" Click="btnVer_Productos" BorderBrush="#00673AB7" Foreground="Transparent" Background="#00673AB7" Grid.RowSpan="2">
+                    <Image Source="/resources/icons/png/carrito.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" TextAlignment="Center"><Run Language="es-mx" Text="Productos"/></TextBlock>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="0,5,0,0" Height="92">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="" BorderBrush="{x:Null}" Foreground="#00000000" Click="btnVerRealizarCorte" Background="#00000000" Height="61">
+                    <Image Source="/resources/icons/png/caja.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Corte de caja" TextAlignment="Center" Margin="0,66,0,0"/>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="186,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Height="61" BorderBrush="{x:Null}" Click="btnVer_Membresias" Background="#00673AB7">
+                    <Image Source="/resources/icons/png/membresia.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" TextAlignment="Center" Height="32" Width="75"><Run Language="es-mx" Text="Membresías"/><LineBreak/><Run Language="es-mx"/></TextBlock>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="279,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <Button   HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" RenderTransformOrigin="0.553,0.536" Cursor="Hand" BorderBrush="{x:Null}" Click="btnAsignar_Membresias" Background="#00673AB7" Foreground="Transparent">
+                    <Image Source="/resources/icons/png/usuarioplus.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" Width="75" TextAlignment="Center" Height="32"><Run Language="es-mx" Text="Asignar membresía"/></TextBlock>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="372,4,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Click="btnValidar_membresias" Background="#00673AB7" BorderBrush="#00673AB7">
+                    <Image Source="/resources/icons/png/usuariocheck.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Width="88" TextAlignment="Center" Height="44" Grid.Row="1"><Run Text="Validar membresía"/><Run Language="es-mx" Text="s"/></TextBlock>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="465,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Background="#00673AB7" BorderBrush="#00673AB7" Click="btnVer_Usuarios" Width="85">
+                    <Image Source="/resources/icons/png/usuariover.png" HorizontalAlignment="Center" VerticalAlignment="Center"  Stretch="Fill" Width="53" Height="53"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" Width="68" TextAlignment="Center"><Run Language="es-mx" Text="Ver usuarios"/></TextBlock>
+            </Grid>
+
         </Grid>
 
-        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="29" Grid.Row="1" VerticalAlignment="Center" Width="1083" Margin="29,0,0,0">
-            <TextBlock HorizontalAlignment="Left" Margin="82,-0.2,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Background="#FFC3C9D6" Height="15" x:Name="txtFecha"><Run Language="es-es" Text=""/></TextBlock>
-            <Label Content="Fecha:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="58"/>
-            <Label Content="Hora:" HorizontalAlignment="Left" Margin="395,0,0,0" VerticalAlignment="Center" Width="74" Height="24"/>
-            <TextBlock HorizontalAlignment="Left" Margin="496,0,0,0" TextWrapping="Wrap" Text="" Width="160" Background="#FFC3C9D6" Height="16" x:Name="txtHora" VerticalAlignment="Center"/>
-            <Label Content="Vendedor:" HorizontalAlignment="Left" Margin="794,0,0,0" VerticalAlignment="Center" Width="96" Height="24"/>
-            <TextBlock HorizontalAlignment="Right" Margin="911,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Background="#FFC3C9D6" Height="16" x:Name="txtUsuario" Width="160"/>
+        <!-- Texto de medio: fecha, hora, usuario -->
+        <Grid Grid.Column="1" Height="29" Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Label Content="Fecha:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="58"/>
+                <TextBlock HorizontalAlignment="Left" Margin="82,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Background="#FFC3C9D6" Height="15" x:Name="txtFecha"><Run Language="es-es" Text=""/></TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Label Content="Hora:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74" Height="24"/>
+                <TextBlock HorizontalAlignment="Left" Margin="101,0,0,0" TextWrapping="Wrap" Text="" Width="160" Background="#FFC3C9D6" Height="16" x:Name="txtHora" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Right">
+                <Label Content="Vendedor:" HorizontalAlignment="Left" VerticalAlignment="Center" Width="96" Height="24"/>
+                <TextBlock HorizontalAlignment="Left" Margin="129,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Background="#FFC3C9D6" Height="16" x:Name="txtUsuario" Width="160"/>
+            </Grid>
         </Grid>
 
         <Grid Grid.Column="1" HorizontalAlignment="Left" Height="70" Margin="0,2,0,0" Grid.Row="4" VerticalAlignment="Top" Width="1141">
@@ -94,8 +122,8 @@
             <Button x:Name="btnCobrar" Content="Cobrar" HorizontalAlignment="Left" Margin="649,19,0,0" VerticalAlignment="Top" Click="btnCobrar_Click" FontWeight="Bold" Height="32" Width="77" IsEnabled="False"/>
         </Grid>
 
-        <Button Content="Agregar productos" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Click="btnVerAgregarProductos" Grid.Column="1" Height="32" Margin="1003,0,0,0" Width="152"/>
-        <DataGrid  x:Name="dataGridProductosVenta" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,68,10,49" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Button Content="Agregar productos" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Click="btnVerAgregarProductos" Grid.Column="1" Height="32" Width="152"/>
+        <DataGrid  x:Name="dataGridProductosVenta" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,68,10,49" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2" Cursor="Hand">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Producto" Binding="{Binding NombreProducto}" />
                 <DataGridTextColumn Header="Codigo Barras" Binding="{Binding CodigoBarras}" />

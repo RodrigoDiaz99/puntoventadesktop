@@ -22,7 +22,7 @@ namespace punto_venta.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace punto_venta.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("punto_venta.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,42 @@ namespace punto_venta.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap caja {
+            get {
+                object obj = ResourceManager.GetObject("caja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap carrito {
+            get {
+                object obj = ResourceManager.GetObject("carrito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap membresia {
+            get {
+                object obj = ResourceManager.GetObject("membresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -72,16 +102,46 @@ namespace punto_venta.Properties {
         ///
         ///&lt;body style=&quot;font-family: &apos;Times New Roman&apos;&quot;&gt;
         ///    &lt;div align=&quot;center&quot; style=&quot;width: 400px; &quot;&gt;
-        ///        &lt;hr /&gt;
-        ///        &lt;img src=&quot;../../resources\logos\spacio_fems_black.png&quot; alt=&quot;&quot; style=&quot;width: 200px; height: auto;&quot;&gt;
+        ///        &lt;!-- &lt;img src=&quot;../../resources\logos\spacio_fems_black.png&quot; alt=&quot;&quot; style=&quot;width: 200px; height: auto;&quot;&gt; --&gt;
+        ///        &lt;h2&gt;&lt;i&gt;SpacioFem&apos;s&lt;/i&gt;&lt;/h2&gt;
+        ///        &lt;hr/&gt;
         ///        &lt;table  align=&quot;center&quot;&gt;
         ///            &lt;tr style=&quot;text-align: center;&quot;&gt;
-        ///                &lt;td colspan=&quot;2&quot;&gt;Folio: @Ticket&lt;/td&gt;
-        ///            &lt;/ [resto de la cadena truncado]&quot;;.
+        ///                &lt;td co [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static string Ticket {
+        public static string Ticket {
             get {
                 return ResourceManager.GetString("Ticket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tienda {
+            get {
+                object obj = ResourceManager.GetObject("tienda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap usuariocheck {
+            get {
+                object obj = ResourceManager.GetObject("usuariocheck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap usuarioplus {
+            get {
+                object obj = ResourceManager.GetObject("usuarioplus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
