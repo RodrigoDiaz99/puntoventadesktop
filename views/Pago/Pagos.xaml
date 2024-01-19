@@ -21,11 +21,8 @@
                 <Label Content="Cambio:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBox x:Name="dCambio" Grid.Column="1" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
             </Grid>
-            <Button x:Name="btnFinalizarPago" Content="Finalizar" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Click="btnFinalizarPago_Click"/>
+            <Button x:Name="btnFinalizarPago" Content="Finalizar venta" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Click="btnFinalizarPago_Click"/>
         </Grid>
-        <Grid Height="18" Width="274" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-            <CheckBox x:Name="chckImprimir" Content="Imprimir ticket" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <CheckBox Content="Enviar copia por correo" Margin="115,0,8,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        </Grid>
+        <Grid Height="18" Width="274" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50"/>
     </Grid>
 </Window>

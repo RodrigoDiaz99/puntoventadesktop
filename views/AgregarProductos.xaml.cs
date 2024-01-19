@@ -123,7 +123,7 @@ namespace punto_venta.views
                 PrecioUnitario = producto.PrecioUnitario,
                 CantidadCarrito = 1,
                 Subtotal = producto.PrecioUnitario,
-                esMembresia = producto.esMembresia
+                esMembresia = (bool)producto.esMembresia
             };
 
             if (productoSeleccionado != null)

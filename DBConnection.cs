@@ -14,6 +14,8 @@ namespace punto_venta
         public DbSet<Corte_Caja> corte_cajas { get; set; }
         public DbSet<Membresia> tipo_membresias { get; set; }
         public DbSet<Carritos> carritos { get; set; }
+        public DbSet<vouchers> vouchers{ get; set; }
+        public DbSet<carrito_has_productos> carrito_has_productos { get; set; }
 
         public bool IsConnectionSuccessful()
         {

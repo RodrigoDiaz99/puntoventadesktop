@@ -21,7 +21,6 @@ namespace punto_venta
     public partial class AperturaCaja : Window
     {
         private int userId; // Declara una variable miembro para almacenar userId
-        private int ; // Declara una variable miembro para almacenar userId
         public AperturaCaja(int userId)
         {
             InitializeComponent();

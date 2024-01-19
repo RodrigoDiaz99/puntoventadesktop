@@ -3,6 +3,7 @@ using punto_venta.views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -95,8 +96,13 @@ namespace punto_venta
 
         private void btnCobrar_Click(object sender, RoutedEventArgs e)
         {
-            Pagos pago = new Pagos(this);
+            Pagos pago = new Pagos(this, cortes_caja_id);
             pago.ShowDialog();
+        }
+    
+        private void verificarCarrito()
+        {
+            btnCobrar.IsEnabled = (objetoVenta.Count > 0);
         }
 
         public void agregarProducto(CarritoModel producto)
@@ -135,6 +141,7 @@ namespace punto_venta
             iImporte.Text = formattedSum;
             iSubtotal.Text = formattedSum;
             iTotal.Text = formattedSum;
+            verificarCarrito();
         }
     }
 }

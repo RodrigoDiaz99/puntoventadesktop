@@ -23,6 +23,7 @@ using iText.Layout.Element;
 using iText.Html2pdf;
 using punto_venta.models;
 using System.Collections.ObjectModel;
+using iText.Kernel.Geom;
 namespace punto_venta.views
 {
     /// <summary>
@@ -135,87 +136,116 @@ namespace punto_venta.views
 
         private void btnFinalizarPago_Click(object sender, RoutedEventArgs e)
         {
-            try
+
+            using (var context = new DBConnection())
             {
-                string htmlTemplate = Properties.Resources.Ticket;
-                string ticketHtml = htmlTemplate.Replace("@Usuario", "KENN");
-
-
-                using (var context = new DBConnection())
+                using (var transaction = context.Database.BeginTransaction())
                 {
-
-                    var usuario = (from x in context.users
-                                   where x.id == userId
-                                   select x).FirstOrDefault();
-
-                    ObservableCollection<CarritoModel> objetoVenta = venta.objetoVenta;
-
-                    Carritos nuevoCarrito = new Carritos
+                    try
                     {
-                        users_id = 1,
-                        numero_venta = "000",
-                        created_at = DateTime.Now,
-                        updated_at = DateTime.Now
-                    };
 
-                    context.carritos.Add(nuevoCarrito);
+                        int voucher_id;
 
-                    foreach (CarritoModel carrito in objetoVenta)
-                    {
-                        carrito_has_productos carritoProductos = new carrito_has_productos
+                        var usuario = (from x in context.users
+                                       where x.id == userId
+                                       select x).FirstOrDefault();
+
+                        ObservableCollection<CarritoModel> objetoVenta = venta.objetoVenta;
+                        int totalProductos = objetoVenta.Count;
+
+                        Carritos nuevoCarrito = new Carritos
                         {
-                            carritos_id = nuevoCarrito.id,
-                            productos_id = carrito.internal_id,
-                            cantidad = carrito.CantidadCarrito,
-                            lMembresia = carrito.esMembresia,
-                            lPedido = false,
+                            users_id = 1,
+                            numero_venta = "000",
                             created_at = DateTime.Now,
                             updated_at = DateTime.Now
                         };
+
+                        context.carritos.Add(nuevoCarrito);
+                        context.SaveChanges();
+                        string productoRow = "";
+                        foreach (CarritoModel carrito in objetoVenta)
+                        {
+                            carrito_has_productos carritoProductos = new carrito_has_productos
+                            {
+                                carritos_id = nuevoCarrito.id,
+                                productos_id = carrito.internal_id,
+                                cantidad = carrito.CantidadCarrito,
+                                lMembresia = carrito.esMembresia,
+                                lPedido = false,
+                                created_at = DateTime.Now,
+                                updated_at = DateTime.Now
+                            };
+                            context.carrito_has_productos.Add(carritoProductos);
+                            context.SaveChanges();
+
+                            // Sección para el ticket
+
+                            productoRow += "<tr>";
+                            productoRow += "<td>" + carrito.CantidadCarrito + "</td>";
+                            productoRow += "<td>" + carrito.NombreProducto + "</td>";
+                            productoRow += "<td>" + carrito.PrecioUnitario + "</td>";
+                            productoRow += "<td>" + carrito.CantidadCarrito * carrito.PrecioUnitario + "</td>";
+                            productoRow += "</tr>";
+
+                        }
+
+                        vouchers voucher = new vouchers
+                        {
+                            carritos_id = nuevoCarrito.id,
+                            corte_cajas_id = this.cortes_caja_id,
+                            cantidad = 1,
+                            precio_total = TotalPagar,
+                            vendedor = usuario.usuario,
+                            cantidad_pagada = PagoTotal,
+                            estatus = "PAGADO",
+                        };
+
+                        context.vouchers.Add(voucher);
+                        context.SaveChanges();
+                        voucher_id = voucher.id;
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            string htmlTemplate = Properties.Resources.Ticket;
+                            string ticketHtml = htmlTemplate.Replace("@Usuario", usuario.usuario);
+                            ticketHtml = ticketHtml.Replace("@FechaVenta", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                            ticketHtml = ticketHtml.Replace("@TotalVenta", TotalPagar.ToString());
+                            ticketHtml = ticketHtml.Replace("@Ticket", voucher_id.ToString("D6"));
+                            ticketHtml = ticketHtml.Replace("@ListaProductos", productoRow);
+                            ticketHtml = ticketHtml.Replace("@PagoEfectivo", Efectivo.ToString());
+                            ticketHtml = ticketHtml.Replace("@PagoTarjeta", Tarjeta.ToString());
+                            ticketHtml = ticketHtml.Replace("@CambioEfectivo", Cambio.ToString());
+                            ticketHtml = ticketHtml.Replace("@CantidadArticulos", totalProductos.ToString());
+                            PdfWriter writer = new PdfWriter(ms);
+                            int fila_producto = 0; //
+                            PdfDocument pdf = new PdfDocument(writer);
+                            Document document = new Document(pdf, new PageSize(380, 420 +(totalProductos * 10)));
+                            
+
+                            HtmlConverter.ConvertToPdf(ticketHtml, pdf, new ConverterProperties());
+
+                            string pdfFilePath = voucher_id + ".pdf";
+                            File.WriteAllBytes(pdfFilePath, ms.ToArray());
+
+                            ProcessStartInfo psi = new ProcessStartInfo
+                            {
+                                FileName = pdfFilePath,
+                                UseShellExecute = true
+                            };
+
+                            System.Diagnostics.Process.Start(psi);
+                        }
+                        transaction.Commit();
+
                     }
-
-                    vouchers vouchers = new vouchers
+                    catch (Exception ex)
                     {
-                        carritos_id = nuevoCarrito.id,
-                        corte_cajas_id = this.cortes_caja_id,
-                        cantidad = 1,
-                        precio_total = TotalPagar,
-                        vendedor = usuario.usuario,
-                        cantidad_pagada = PagoTotal,
-                        estatus = "PAGADO",
-                    };
-
-
-                    context.SaveChanges();
+                        transaction.Rollback();
+                        System.Windows.Forms.MessageBox.Show($"Error: {ex.Message} at {ex.ToString()}", "Error");
+                    }
                 }
-
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    PdfWriter writer = new PdfWriter(ms);
-                    PdfDocument pdf = new PdfDocument(writer);
-                    Document document = new Document(pdf);
-
-                    HtmlConverter.ConvertToPdf(ticketHtml, pdf, new ConverterProperties());
-
-                    string pdfFilePath = "TicketPrueba.pdf";
-                    File.WriteAllBytes(pdfFilePath, ms.ToArray());
-
-                    ProcessStartInfo psi = new ProcessStartInfo
-                    {
-                        FileName = pdfFilePath,
-                        UseShellExecute = true
-                    };
-
-                    System.Diagnostics.Process.Start(psi);
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show($"Error: {ex.Message} at {ex.ToString()}", "Error");
             }
         }
-
-
-
     }
 }
