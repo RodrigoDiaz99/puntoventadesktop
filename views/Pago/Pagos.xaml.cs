@@ -198,6 +198,9 @@ namespace punto_venta.views
                             precio_total = TotalPagar,
                             vendedor = usuario.usuario,
                             cantidad_pagada = PagoTotal,
+                            cantidad_pagada_efectivo = Efectivo,
+                            cantidad_pagada_tarjeta = Tarjeta,
+                            cambio_efectivo = Cambio,
                             estatus = "PAGADO",
                         };
 

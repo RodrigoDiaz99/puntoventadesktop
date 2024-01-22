@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta.views.Caja"
         mc:Ignorable="d"
-        Title="CerrarCaja" Height="450" Width="800">
+        Title="CerrarCaja" Height="240" Width="240">
     <Grid>
-        
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="89">
+            <TextBox HorizontalAlignment="Left" Margin="0,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ingrese efectivo final:" VerticalAlignment="Top"/>
+            <Button Content="Aceptar" VerticalAlignment="Bottom" Click="Button_Click"/>
+        </Grid>
+
     </Grid>
 </Window>

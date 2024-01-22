@@ -16,7 +16,9 @@ namespace punto_venta.models
         public double precio_total { get; set; }
         public string vendedor { get; set; }
         public double cantidad_pagada { get; set; }
-        public double cambio { get; set; }
+        public double cantidad_pagada_efectivo { get; set; }
+        public double cantidad_pagada_tarjeta { get; set; }
+         public double cambio_efectivo { get; set; }
         public string estatus { get; set; }
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }

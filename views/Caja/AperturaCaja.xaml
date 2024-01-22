@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta"
         mc:Ignorable="d"
-        Title="Apertura de caja" Height="278" Width="300">
+        Title="Apertura de caja" Height="300
+        " Width="300">
     <Grid>
         <Grid Height="119" Width="140" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="Efectivo inicial" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="141"/>
