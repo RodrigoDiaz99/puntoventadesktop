@@ -1,21 +1,27 @@
-﻿<Window x:Class="punto_venta.views.Caja.MenuCaja"
+﻿<Window x:Class="punto_venta.views.Caja.ResultadoCaja"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta.views.Caja"
         mc:Ignorable="d"
-        Title="Caja" Height="800" Width="450">
+        Title="Caja" Height="450" Width="450">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="116" Margin="71,54,0,0" VerticalAlignment="Top" Width="322">
-            <TextBlock HorizontalAlignment="Left" Margin="0,9,0,0" TextWrapping="Wrap" Text="Efectivo inicial (+)" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Right" Margin="54,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,39,0,0" TextWrapping="Wrap" Text="Efectivo entrante (+)" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Right" Margin="54,30,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <Grid HorizontalAlignment="Left" Height="231" Margin="71,54,0,0" VerticalAlignment="Top" Width="322">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Efectivo inicial (+)" VerticalAlignment="Top" Margin="0,9,0,0"/>
+            <TextBox x:Name="efectivoInicial" HorizontalAlignment="Right" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Efectivo entrante (+)" VerticalAlignment="Top" Margin="0,39,0,0"/>
+            <TextBox x:Name="efectivoEntrante" HorizontalAlignment="Right" Margin="0,30,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" Text="Efectivo saliente (-)" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Right" Margin="54,61,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,100,0,0" TextWrapping="Wrap" Text="Total final" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Right" Margin="54,91,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="efectivoSaliente" HorizontalAlignment="Right" Margin="0,61,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Efectivo faltante" VerticalAlignment="Top" Margin="0,130,0,0"/>
+            <TextBox x:Name="efectivoFaltante" HorizontalAlignment="Right" Margin="0,121,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+
+            <Button Content="Imprimir ticket y finalizar" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Efectivo sobrante" VerticalAlignment="Top" Margin="0,160,0,0"/>
+            <TextBox x:Name="efectivoSobrante" HorizontalAlignment="Left" Margin="202,151,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,100,0,0" TextWrapping="Wrap" Text="Efectivo final registrado" VerticalAlignment="Top"/>
+            <TextBox x:Name="efectivoFinal" HorizontalAlignment="Right" Margin="0,91,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
 
         </Grid>
 

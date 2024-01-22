@@ -61,9 +61,10 @@ namespace punto_venta
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener los resultados: " + ex.Message);
+                MessageBox.Show("Error al obtener los resultados: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
-           
+
         }
     }
 }

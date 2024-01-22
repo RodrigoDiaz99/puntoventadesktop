@@ -27,6 +27,8 @@
     <None Remove="resources\icons\png\usuariocheck.png" />
     <None Remove="resources\icons\png\usuarioplus.png" />
     <None Remove="resources\icons\png\usuariover.png" />
+    <None Remove="resources\icons\search_icon.png" />
+    <None Remove="resources\plantillas\CierreCaja.html" />
     <None Remove="resources\plantillas\Ticket.html" />
     <None Remove="search_icon.png" />
     <None Remove="spacio_fems_black.png" />
@@ -50,8 +52,10 @@
     <Resource Include="resources\icons\png\usuariocheck.png" />
     <Resource Include="resources\icons\png\usuarioplus.png" />
     <Resource Include="resources\icons\png\usuariover.png" />
+    <Resource Include="resources\icons\search_icon.png" />
     <Resource Include="resources\logos\logo.png" />
     <Resource Include="resources\logos\spacio_fems_black.png" />
+    <Resource Include="resources\plantillas\CierreCaja.html" />
     <Resource Include="resources\plantillas\Ticket.html">
       <Generator>MSBuild:Compile</Generator>
     </Resource>

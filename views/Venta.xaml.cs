@@ -1,5 +1,6 @@
 ﻿using punto_venta.models;
 using punto_venta.views;
+using punto_venta.views.Caja;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -90,8 +91,8 @@ namespace punto_venta
 
         private void btnVerRealizarCorte(object sender, RoutedEventArgs e)
         {
-            AperturaCaja corteCaja = new AperturaCaja(1);
-            corteCaja.ShowDialog();
+            CerrarCaja cerrarCaja = new CerrarCaja(userId,cortes_caja_id);
+            cerrarCaja.ShowDialog();
         }
 
         private void btnValidar_membresias(object sender, RoutedEventArgs e)

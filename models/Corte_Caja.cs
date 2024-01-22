@@ -14,7 +14,7 @@ namespace punto_venta.models
         public int? users_id { get; set; }
         public DateTime? fecha_inicio { get; set; }
         public DateTime? fecha_final { get; set; }
-        public double? cantidad_inicial { get; set; }
+        public double cantidad_inicial { get; set; }
         public double? cantidad_final { get; set; }
         public double? total_venta { get; set; }
         public double? diferencia { get; set; }
