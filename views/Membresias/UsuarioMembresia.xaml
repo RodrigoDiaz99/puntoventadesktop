@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:punto_venta.views"
         mc:Ignorable="d"
-        Title="UsuarioMembresia" Height="450" Width="800">
+        Title="UsuarioMembresia" Height="279" Width="350">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -22,7 +22,16 @@
             <Button x:Name="btnBuscarMembresia" Content="Buscar" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Click="btnBuscarMembresia_Click" HorizontalAlignment="Right"/>
 
         </Grid>
-        <Button x:Name="btnActivar" Content="Activar" HorizontalAlignment="Left" Margin="120,145,0,0" VerticalAlignment="Top" Cursor="Hand" IsEnabled="False"/>
+        <Button x:Name="btnActivar" Content="Activar" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" IsEnabled="False" Margin="0,183,0,0"/>
+        <Grid HorizontalAlignment="Left" Height="47" Margin="21,115,0,0" VerticalAlignment="Top" Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="161*"/>
+                <ColumnDefinition Width="73*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="cResultado" HorizontalAlignment="Left" Margin="4,24,0,0" TextWrapping="Wrap" Text="Se va a asociar la membresía: [MEMBRESÍA]" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <Label Content="Resultado:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        </Grid>
 
     </Grid>
 </Window>
