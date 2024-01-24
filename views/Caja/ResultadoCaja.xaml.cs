@@ -99,6 +99,7 @@ namespace punto_venta.views.Caja
                 };
 
                 System.Diagnostics.Process.Start(psi);
+                this.Close();
             }
         }
     }

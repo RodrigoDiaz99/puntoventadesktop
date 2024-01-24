@@ -21,6 +21,7 @@ namespace punto_venta
     public partial class AperturaCaja : Window
     {
         private int userId; // Declara una variable miembro para almacenar userId
+        private string cUsuario;
         public AperturaCaja(int userId)
         {
             InitializeComponent();
@@ -39,19 +40,30 @@ namespace punto_venta
                     Corte_Caja nuevoCorte = new Corte_Caja()
                     {
                         users_id = userIdValue,
-                        fecha_inicio = DateTime.Now, // Puedes ajustar esto según tus necesidades
+                        fecha_inicio = DateTime.Now,
                         cantidad_inicial = cantidadInicial,
-                        lActivo = true, // Otra propiedad que quieras establecer
-                        created_at = DateTime.Now, // Otra propiedad que quieras establecer
+                        lActivo = true,
+                        created_at = DateTime.Now,
                     };
                     using (var context = new DBConnection())
                     {
-                        context.corte_cajas.Add(nuevoCorte);
-                        context.SaveChanges();
-                        Venta ventanaPuntoVenta = new Venta(false, userId, nuevoCorte.id);
-                        ventanaPuntoVenta.Show();
-                        this.Close();
+                        var usuario = context.users.Where(x => x.id == userId)
+                            .Select(x => x.usuario)
+                            .FirstOrDefault();
 
+                        if (usuario != null)
+                        {
+                            string cUsuario = usuario;
+                            context.corte_cajas.Add(nuevoCorte);
+                            context.SaveChanges();
+                            Venta ventanaPuntoVenta = new Venta(false, userId, nuevoCorte.id, cUsuario);
+                            ventanaPuntoVenta.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            throw new Exception("No se pudo obtener la información del usuario.");
+                        }
                     }
                 }
                 else
@@ -61,7 +73,7 @@ namespace punto_venta
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener los resultados: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ocurió un error: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 

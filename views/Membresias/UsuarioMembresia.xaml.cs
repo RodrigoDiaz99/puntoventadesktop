@@ -10,10 +10,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MessageBoxForm = System.Windows.Forms.MessageBox;
+using MessageBox = System.Windows.MessageBox;
 
 namespace punto_venta.views
 {
@@ -27,6 +30,7 @@ namespace punto_venta.views
         private int tipo_membresias_id;
         private int users_id;
         private int carritos_id;
+        private string nombreMembresia;
         public UsuarioMembresia(User usuarioSeleccionado)
         {
             InitializeComponent();
@@ -37,10 +41,11 @@ namespace punto_venta.views
 
         private void btnBuscarMembresia_Click(object sender, RoutedEventArgs e)
         {
-            // Obtener todos los productos desde la base de datos
+            btnActivar.IsEnabled = false;
             using (var context = new DBConnection())
             {
                 string folioStr = cFolioCompra.Text;
+                girdResultado.Visibility = Visibility.Visible;
 
                 // Asegúrate de manejar posibles errores de conversión
                 if (int.TryParse(folioStr, out int folio))
@@ -91,6 +96,7 @@ namespace punto_venta.views
                     }
                     else
                     {
+                        nombreMembresia = membresia.nombre_membresia;
                         tipo_membresias_id = membresia.id;
                         users_id = usuarioSeleccionado.id;
                         carritos_id = carrito.id;
@@ -102,6 +108,7 @@ namespace punto_venta.views
                 }
                 else
                 {
+                    girdResultado.Visibility = Visibility.Visible;
                     MessageBox.Show("Ingrese un folio válido.");
                 }
 
@@ -119,6 +126,7 @@ namespace punto_venta.views
                         string fecha_inicio = "01/01/2023";
                         DateOnly fecha_inicio_date;
                         DateOnly fecha_expiracion_date;
+
 
                         if (DateOnly.TryParse(fecha_inicio, out DateOnly output))
                         {
@@ -138,17 +146,27 @@ namespace punto_venta.views
                             MessageBox.Show("Error de fecha.");
                         }
 
-                        usuario_membresias usuario_membresia = new usuario_membresias()
+                        if (MessageBoxForm.Show("¿Desea continuar con la operación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) is System.Windows.Forms.DialogResult.Yes)
                         {
-                            users_id = users_id,
-                            fecha_inicio = fecha_inicio_date,
-                            fecha_expiracion = fecha_expiracion_date,
-                            carritos_id = carritos_id,
-                            tipo_membresias_id = tipo_membresias_id,
-                        };
+                            usuario_membresias usuario_membresia = new usuario_membresias()
+                            {
+                                users_id = users_id,
+                                fecha_inicio = fecha_inicio_date,
+                                fecha_expiracion = fecha_expiracion_date,
+                                carritos_id = carritos_id,
+                                tipo_membresias_id = tipo_membresias_id,
+                                estatus_membresia = true,
+                                created_at = DateTime.Now,
+                                updated_at = DateTime.Now
+                            };
 
-                        context.usuario_membresias.Add(usuario_membresia);
-                        transaction.Commit();
+                            context.usuario_membresias.Add(usuario_membresia);
+                            context.SaveChanges();
+                            transaction.Commit();
+                            MessageBox.Show("Se asignó correctamente la membresía al usuario seleccionado.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
+                            this.Close();
+                        }
+
                     }
                     catch (Exception ex)
                     {

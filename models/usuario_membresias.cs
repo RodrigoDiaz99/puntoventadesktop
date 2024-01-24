@@ -16,6 +16,7 @@ namespace punto_venta.models
 
         public int carritos_id { get; set; }
         public int tipo_membresias_id { get; set; }
+        public bool estatus_membresia { get; set; }
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }
     }

@@ -202,6 +202,8 @@ namespace punto_venta.views
                             cantidad_pagada_tarjeta = Tarjeta,
                             cambio_efectivo = Cambio,
                             estatus = "PAGADO",
+                            created_at = DateTime.Now,
+                            updated_at = DateTime.Now
                         };
 
                         context.vouchers.Add(voucher);
@@ -240,6 +242,8 @@ namespace punto_venta.views
                             System.Diagnostics.Process.Start(psi);
                         }
                         transaction.Commit();
+                        venta.reiniciarVenta();
+                        this.Close();
 
                     }
                     catch (Exception ex)

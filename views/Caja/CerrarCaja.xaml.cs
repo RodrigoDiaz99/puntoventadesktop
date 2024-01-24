@@ -22,11 +22,13 @@ namespace punto_venta.views.Caja
     {
         private int id_corte_cajas;
         private int userId;
-        public CerrarCaja(int userId, int id_corte_cajas)
+        private Venta venta;
+        public CerrarCaja(Venta ventaIn, int userId, int id_corte_cajas)
         {
             InitializeComponent();
             this.id_corte_cajas = id_corte_cajas;
             this.userId = userId;
+            venta = ventaIn;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,6 +46,8 @@ namespace punto_venta.views.Caja
                     double dEfectivoFaltante = 0;
                     double dEfectivoSobrante = 0;
                     double dEfectivoDiferencia = 0;
+
+
                     bool esFaltante = false;
 
                     List<vouchers> lstVouchers = (from x in context.vouchers
@@ -72,6 +76,7 @@ namespace punto_venta.views.Caja
 
                     dEfectivoFinal = Convert.ToDouble(this.dEfectivoFinal.Text);
                     dEfectivoDiferencia = dEfectivoFinal - dEfectivoCalculado;
+
                     if (dEfectivoDiferencia < 0)
                     {
                         dEfectivoFaltante = dEfectivoDiferencia;
@@ -79,10 +84,16 @@ namespace punto_venta.views.Caja
                     else
                     {
                         dEfectivoSobrante = dEfectivoDiferencia;
-
                     }
 
-                    ResultadoCaja resultadoCaja = new ResultadoCaja(userId,id_corte_cajas,dEfectivoInicial, dEfectivoEntrante, dEfectivoSaliente, dEfectivoFinal, dEfectivoFaltante, dEfectivoSobrante);
+                    ResultadoCaja resultadoCaja = new ResultadoCaja(userId, id_corte_cajas, dEfectivoInicial, dEfectivoEntrante, dEfectivoSaliente, dEfectivoFinal, dEfectivoFaltante, dEfectivoSobrante);
+
+                    this.Close();
+                    venta.btnAgregarProducto.IsEnabled = false;
+                    venta.gridAccionesCajaAbierta.Visibility = Visibility.Hidden;
+                    venta.gridAccionesCajaCerrada.Visibility = Visibility.Visible;
+                    corte_cajas.lActivo = false;
+                    context.SaveChanges();
                     resultadoCaja.ShowDialog();
 
                 }

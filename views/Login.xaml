@@ -25,7 +25,7 @@
                 <Label Content="Contraseña" FontSize="14" Foreground="#FF203052" Margin="0,43,0,0" VerticalAlignment="Top" Width="109" HorizontalAlignment="Left"/>
                 <Label Content="Correo/Usuario" FontSize="14" Foreground="#FF121D33" VerticalAlignment="Top" Width="109" Height="28" HorizontalAlignment="Left"/>
             </Grid>
-            <Button Content="Acceder" HorizontalAlignment="Center" Margin="0,345,0,0" Click="BtnLogin_Click" VerticalAlignment="Top" FontWeight="Normal"/>
+            <Button x:Name="btnLogin" Content="Acceder" HorizontalAlignment="Center" Margin="0,345,0,0" Click="BtnLogin_Click" VerticalAlignment="Top" FontWeight="Normal"/>
         </Grid>
         <Grid Grid.ColumnSpan="3" Margin="500,0,0,0">
             <Grid.Background>

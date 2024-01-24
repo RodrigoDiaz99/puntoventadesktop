@@ -22,8 +22,8 @@
             <Button x:Name="btnBuscarMembresia" Content="Buscar" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Click="btnBuscarMembresia_Click" HorizontalAlignment="Right"/>
 
         </Grid>
-        <Button x:Name="btnActivar" Content="Activar" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" IsEnabled="False" Margin="0,183,0,0"/>
-        <Grid HorizontalAlignment="Left" Height="47" Margin="21,115,0,0" VerticalAlignment="Top" Width="300">
+        <Button x:Name="btnActivar" Content="Activar" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" IsEnabled="False" Margin="0,183,0,0" Click="btnActivar_Click"/>
+        <Grid x:Name="girdResultado" HorizontalAlignment="Left" Height="47" Margin="21,115,0,0" VerticalAlignment="Top" Width="300" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="161*"/>
                 <ColumnDefinition Width="73*"/>

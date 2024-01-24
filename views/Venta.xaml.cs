@@ -33,10 +33,13 @@ namespace punto_venta
         public string formattedSum;
         public int userId;
         public int cortes_caja_id;
-        public Venta(bool sesionActiva, int userId, int cortes_caja_id)
+        public Venta(bool sesionActiva, int userId, int cortes_caja_id, string cUsuario)
         {
             InitializeComponent();
+            gridAccionesCajaAbierta.Visibility = Visibility.Visible;
+            gridAccionesCajaCerrada.Visibility = Visibility.Hidden;
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtUsuario.Text = cUsuario;
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
@@ -49,7 +52,7 @@ namespace punto_venta
             if (sesionActiva)
             {
                 // Mostrar ventana de aviso
-                     MessageBox.Show("La última vez que se cerró la aplicación, no se realizó un corte de caja. Se continuará con la sesión.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
+                MessageBox.Show("La última vez que se cerró la aplicación, no se realizó un corte de caja. Se continuará con la sesión.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
             }
         }
 
@@ -89,9 +92,16 @@ namespace punto_venta
             agregarProductos.ShowDialog();
         }
 
+        private void btnAperturarCaja_Click(object sender, RoutedEventArgs e)
+        {
+            AperturaCaja aperturaCaja = new AperturaCaja(userId);
+            aperturaCaja.ShowDialog();
+            this.Close();
+        }
+
         private void btnVerRealizarCorte(object sender, RoutedEventArgs e)
         {
-            CerrarCaja cerrarCaja = new CerrarCaja(userId,cortes_caja_id);
+            CerrarCaja cerrarCaja = new CerrarCaja(this, userId, cortes_caja_id);
             cerrarCaja.ShowDialog();
         }
 
@@ -109,6 +119,20 @@ namespace punto_venta
         private void verificarCarrito()
         {
             btnCobrar.IsEnabled = (objetoVenta.Count > 0);
+        }
+
+        public void reiniciarVenta()
+        {
+            objetoVenta.Clear();
+            sumPrecioUnitario = objetoVenta.Sum(item => item.Subtotal);
+            CollectionViewSource.GetDefaultView(dataGridProductosVenta.ItemsSource).Refresh();
+
+            // Formatear y mostrar en tus controles
+            formattedSum = sumPrecioUnitario.HasValue ? sumPrecioUnitario.Value.ToString("C") : "N/A";
+            iImporte.Text = formattedSum;
+            iSubtotal.Text = formattedSum;
+            iTotal.Text = formattedSum;
+            verificarCarrito();
         }
 
         public void agregarProducto(CarritoModel producto)
