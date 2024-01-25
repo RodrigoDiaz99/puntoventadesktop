@@ -35,7 +35,7 @@ namespace punto_venta.views
         {
             InitializeComponent();
             this.usuarioSeleccionado = usuarioSeleccionado;
-            var nombre = usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido_paterno + " " + usuarioSeleccionado.apellido_materno;
+            var nombre = usuarioSeleccionado.cliente + " " + usuarioSeleccionado.apellido_paterno + " " + usuarioSeleccionado.apellido_materno;
             cNombreCliente.Text = nombre;
         }
 

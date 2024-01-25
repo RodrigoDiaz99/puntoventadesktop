@@ -28,6 +28,9 @@
     <Compile Update="PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\Membresias\ValidarMembresias.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\Pago\VistaTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,6 +73,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PopupWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Membresias\ValidarMembresias.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\Pago\VistaTicket.xaml">

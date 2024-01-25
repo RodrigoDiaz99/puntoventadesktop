@@ -1,6 +1,7 @@
 ﻿using punto_venta.models;
 using punto_venta.views;
 using punto_venta.views.Caja;
+using punto_venta.views.Membresias;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -107,7 +108,8 @@ namespace punto_venta
 
         private void btnValidar_membresias(object sender, RoutedEventArgs e)
         {
-
+            ValidarMembresias validarMembresias = new ValidarMembresias();
+            validarMembresias.ShowDialog();
         }
 
         private void btnCobrar_Click(object sender, RoutedEventArgs e)
