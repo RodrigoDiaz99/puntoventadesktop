@@ -143,6 +143,13 @@ namespace punto_venta
 
             // Buscar si ya existe un producto con el mismo internal_id y esMembresia
             CarritoModel existingProduct = objetoVenta.FirstOrDefault(item => item.internal_id == producto.internal_id && item.esMembresia == producto.esMembresia);
+            CarritoModel validarMembresia = objetoVenta.FirstOrDefault(item => item.esMembresia == true);
+
+            if (validarMembresia != null && producto.esMembresia == true)
+            {
+                MessageBox.Show("Solo puede agregar una membresía a la vez.", "Atención", MessageBoxButton.OK, MessageBoxImage.Question);
+                return;
+            }
 
             if (existingProduct != null)
             {

@@ -139,7 +139,7 @@
             <Button x:Name="btnCobrar" Content="Cobrar" HorizontalAlignment="Left" Margin="649,19,0,0" VerticalAlignment="Top" Click="btnCobrar_Click" FontWeight="Bold" Height="32" Width="77" IsEnabled="False"/>
         </Grid>
 
-        <Button x:Name="btnAgregarProducto" Content="Agregar productos" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Click="btnVerAgregarProductos" Grid.Column="1" Height="32" Width="152" Margin="1003,0,0,0"/>
+        <Button x:Name="btnAgregarProducto" Content="Agregar productos" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Click="btnVerAgregarProductos" Grid.Column="1" Height="32" Width="152"/>
         <DataGrid  x:Name="dataGridProductosVenta" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,17,10,49" Grid.Row="4" Grid.ColumnSpan="3" Cursor="Hand">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Producto" Binding="{Binding NombreProducto}" />

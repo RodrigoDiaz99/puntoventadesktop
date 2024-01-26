@@ -10,12 +10,12 @@
         <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Identificador" Binding="{Binding id}" />
-                <DataGridTextColumn Header="Nombre (s)" Binding="{Binding nombre}" />
-                <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding apellido_paterno}" />
-                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellido_materno}" />
+                <DataGridTextColumn Header="Nombre completo" Binding="{Binding nombre_completo}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding usuario}" />
-                <DataGridTextColumn Header="Codigo Usuario" Binding="{Binding codigo_usuario}" />
                 <DataGridTextColumn Header="Membresia" Binding="{Binding nombre_membresia}" />
+                <DataGridTextColumn Header="Estatus" Binding="{Binding estatus_membresia}" />
+                <DataGridTextColumn Header="Fecha de inicio" Binding="{Binding fecha_inicio}" />
+                <DataGridTextColumn Header="Fecha de expiración" Binding="{Binding fecha_final}" />
 
                 <DataGridTemplateColumn Header="Acciones"  >
                     <DataGridTemplateColumn.CellTemplate>

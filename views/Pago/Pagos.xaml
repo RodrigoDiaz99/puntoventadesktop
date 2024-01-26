@@ -3,23 +3,23 @@
         <Grid x:Name="grid" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid Width="250" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left">
                 <Label Content="Total a pagar:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="dTotalPagar" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBox  x:Name="dTotalPagar" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="dTotalPagar_TextChanged"/>
             </Grid>
             <Grid Width="250" VerticalAlignment="Top" Margin="0,50,0,0" Height="25" HorizontalAlignment="Left">
                 <Label Content="Efectivo:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="dEfectivo" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" HorizontalAlignment="Left" TextChanged="dEfectivo_TextChanged" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBox x:Name="dEfectivo" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" HorizontalAlignment="Left" TextChanged="dEfectivo_TextChanged" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
             </Grid>
             <Grid Width="250" VerticalAlignment="Top" Margin="0,100,0,0" Height="25" HorizontalAlignment="Left">
                 <Label Content="Tarjeta:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="dTarjeta" Width="120" VerticalAlignment="Bottom"  TextWrapping="Wrap" Margin="84,0,0,0" HorizontalAlignment="Left" TextChanged="dTarjeta_TextChanged" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBox x:Name="dTarjeta" Width="120" VerticalAlignment="Bottom"  TextWrapping="Wrap" Margin="84,0,0,0" HorizontalAlignment="Left" TextChanged="dTarjeta_TextChanged" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
             </Grid>
             <Grid Width="250" VerticalAlignment="Top" Margin="0,150,0,0" Height="25" HorizontalAlignment="Left">
                 <Label Content="Pago total:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="dTotalPagado" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBox x:Name="dTotalPagado" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
             </Grid>
             <Grid Width="250" VerticalAlignment="Top" Margin="0,200,0,0" Height="25" HorizontalAlignment="Left">
                 <Label Content="Cambio:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="dCambio" Grid.Column="1" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <TextBox x:Name="dCambio" Grid.Column="1" Width="120" VerticalAlignment="Center"  TextWrapping="Wrap" Margin="84,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
             </Grid>
             <Button x:Name="btnFinalizarPago" Content="Finalizar venta" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Click="btnFinalizarPago_Click"/>
         </Grid>

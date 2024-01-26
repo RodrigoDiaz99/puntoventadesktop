@@ -87,7 +87,15 @@ namespace punto_venta.views
             }
         }
 
+        public void validarPago()
+        {
+            btnFinalizarPago.IsEnabled = PagoTotal >= TotalPagar;
+        }
 
+        public void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
         public Pagos(Venta venta, int cortes_caja_id)
         {
             InitializeComponent();
@@ -96,6 +104,8 @@ namespace punto_venta.views
             TotalPagar = TotalPagar = (double)venta.sumPrecioUnitario;
             dTotalPagar.Text = venta.formattedSum;
             this.cortes_caja_id = cortes_caja_id;
+            validarPago();
+
         }
 
         private void dEfectivo_TextChanged(object sender, TextChangedEventArgs e)
@@ -112,8 +122,9 @@ namespace punto_venta.views
             PagoTotal = Efectivo + Tarjeta;
             EfectivoTmp = TotalPagar - Tarjeta;
             Cambio = Efectivo - EfectivoTmp;
-            dTotalPagado.Text = PagoTotal.ToString();
-            dCambio.Text = Cambio.ToString();
+            dTotalPagado.Text = PagoTotal.ToString("C");
+            dCambio.Text = Cambio.ToString("C");
+            validarPago();
         }
 
         private void dTarjeta_TextChanged(object sender, TextChangedEventArgs e)
@@ -130,8 +141,9 @@ namespace punto_venta.views
             PagoTotal = Efectivo + Tarjeta;
             EfectivoTmp = TotalPagar - Tarjeta;
             Cambio = Efectivo - EfectivoTmp;
-            dTotalPagado.Text = PagoTotal.ToString();
-            dCambio.Text = Cambio.ToString();
+            dTotalPagado.Text = PagoTotal.ToString("C");
+            dCambio.Text = Cambio.ToString("C");
+            validarPago();
         }
 
         private void btnFinalizarPago_Click(object sender, RoutedEventArgs e)
@@ -253,6 +265,11 @@ namespace punto_venta.views
                     }
                 }
             }
+        }
+
+        private void dTotalPagar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
