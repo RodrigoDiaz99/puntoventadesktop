@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Printing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,10 @@ namespace punto_venta
     /// <summary>
     /// Lógica de interacción para Venta.xaml
     /// </summary>
+    /// 
     public partial class Venta : Window
     {
+        private StringBuilder codigoBarras = new StringBuilder();
 
         public ObservableCollection<CarritoModel> objetoVenta;
         public double? sumPrecioUnitario;
@@ -182,5 +185,70 @@ namespace punto_venta
             iTotal.Text = formattedSum;
             verificarCarrito();
         }
+
+
+
+        private void escanearProducto(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                string textoCapturado = codigoBarras.ToString();
+                codigoBarras.Clear();
+                obtenerProductoEscaneado(textoCapturado);
+            }
+            else
+            {
+                string caracter = e.Key.ToString();
+                if (caracter.Length == 1)
+                {
+                    codigoBarras.Append(caracter);
+                }
+                else if (caracter.StartsWith("D") && caracter.Length == 2 && char.IsDigit(caracter[1]))
+                {
+                    codigoBarras.Append(caracter[1]);
+                }
+            }
+        }
+
+        private void obtenerProductoEscaneado(string codigoBarras)
+        {
+            using (var context = new DBConnection())
+            {
+                try
+                {
+                    Productos producto = null;
+
+                    producto = context.productos
+                        .Where(u => u.codigo_barras == codigoBarras)
+                        .FirstOrDefault();
+
+                    if (producto == null)
+                    {
+                        MessageBox.Show("No se encontraron resultados.");
+                        return;
+                    }
+
+                    CarritoModel productoSeleccionado = new CarritoModel
+                    {
+                        internal_id = producto.id,
+                        NombreProducto = producto.nombre_producto,
+                        CodigoBarras = producto.codigo_barras,
+                        PrecioUnitario = producto.precio_venta,
+                        CantidadCarrito = 1,
+                        Subtotal = producto.precio_venta,
+                        esMembresia = false
+                    };
+
+                    this.agregarProducto(productoSeleccionado);
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener los resultados: " + ex.Message);
+                }
+            }
+        }
+
     }
 }

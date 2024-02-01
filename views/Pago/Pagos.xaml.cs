@@ -194,8 +194,7 @@ namespace punto_venta.views
                             // Sección para el ticket
 
                             productoRow += "<tr>";
-                            productoRow += "<td>" + carrito.CantidadCarrito + "</td>";
-                            productoRow += "<td>" + carrito.NombreProducto + "</td>";
+                            productoRow += "<td>" + carrito.CantidadCarrito + "x" + carrito.NombreProducto + " </td>";
                             productoRow += "<td>" + carrito.PrecioUnitario + "</td>";
                             productoRow += "<td>" + carrito.CantidadCarrito * carrito.PrecioUnitario + "</td>";
                             productoRow += "</tr>";
@@ -222,40 +221,58 @@ namespace punto_venta.views
                         context.SaveChanges();
                         voucher_id = voucher.id;
 
-                        using (MemoryStream ms = new MemoryStream())
+                        Ventas nuevaVenta = new Ventas
                         {
-                            string htmlTemplate = Properties.Resources.Ticket;
-                            string ticketHtml = htmlTemplate.Replace("@Usuario", usuario.usuario);
-                            ticketHtml = ticketHtml.Replace("@FechaVenta", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
-                            ticketHtml = ticketHtml.Replace("@TotalVenta", TotalPagar.ToString());
-                            ticketHtml = ticketHtml.Replace("@Ticket", voucher_id.ToString("D6"));
-                            ticketHtml = ticketHtml.Replace("@ListaProductos", productoRow);
-                            ticketHtml = ticketHtml.Replace("@PagoEfectivo", Efectivo.ToString());
-                            ticketHtml = ticketHtml.Replace("@PagoTarjeta", Tarjeta.ToString());
-                            ticketHtml = ticketHtml.Replace("@CambioEfectivo", Cambio.ToString());
-                            ticketHtml = ticketHtml.Replace("@CantidadArticulos", totalProductos.ToString());
-                            PdfWriter writer = new PdfWriter(ms);
-                            int fila_producto = 0; //
-                            PdfDocument pdf = new PdfDocument(writer);
-                            Document document = new Document(pdf, new PageSize(380, 420 +(totalProductos * 10)));
-                            
+                            vouchers_id = voucher_id,
+                            estatus = "PAGADO",
+                            monto_recibido = PagoTotal,
+                            cambio = Cambio,
+                            creado_por = usuario.id
+                        };
 
-                            HtmlConverter.ConvertToPdf(ticketHtml, pdf, new ConverterProperties());
+                        context.ventas.Add(nuevaVenta);
+                        context.SaveChanges();
 
-                            string pdfFilePath = voucher_id + ".pdf";
-                            File.WriteAllBytes(pdfFilePath, ms.ToArray());
+                        bool isImprimirTicketChecked = lImprimirTicket.IsChecked ?? false;
 
-                            ProcessStartInfo psi = new ProcessStartInfo
+                        if (isImprimirTicketChecked)
+                        {
+                            using (MemoryStream ms = new MemoryStream())
                             {
-                                FileName = pdfFilePath,
-                                UseShellExecute = true
-                            };
+                                string htmlTemplate = Properties.Resources.Ticket;
+                                string ticketHtml = htmlTemplate.Replace("@Usuario", usuario.usuario);
+                                ticketHtml = ticketHtml.Replace("@FechaVenta", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                                ticketHtml = ticketHtml.Replace("@TotalVenta", TotalPagar.ToString());
+                                ticketHtml = ticketHtml.Replace("@Ticket", voucher_id.ToString("D6"));
+                                ticketHtml = ticketHtml.Replace("@ListaProductos", productoRow);
+                                ticketHtml = ticketHtml.Replace("@PagoEfectivo", Efectivo.ToString());
+                                ticketHtml = ticketHtml.Replace("@PagoTarjeta", Tarjeta.ToString());
+                                ticketHtml = ticketHtml.Replace("@CambioEfectivo", Cambio.ToString());
+                                ticketHtml = ticketHtml.Replace("@CantidadArticulos", totalProductos.ToString());
+                                PdfWriter writer = new PdfWriter(ms);
+                                int fila_producto = 0; //
+                                PdfDocument pdf = new PdfDocument(writer);
+                                Document document = new Document(pdf, new PageSize(380, 420 + (totalProductos * 10)));
 
-                            System.Diagnostics.Process.Start(psi);
+
+                                HtmlConverter.ConvertToPdf(ticketHtml, pdf, new ConverterProperties());
+
+                                string pdfFilePath = voucher_id + ".pdf";
+                                File.WriteAllBytes(pdfFilePath, ms.ToArray());
+
+                                ProcessStartInfo psi = new ProcessStartInfo
+                                {
+                                    FileName = pdfFilePath,
+                                    UseShellExecute = true
+                                };
+                                System.Diagnostics.Process.Start(psi);
+                            }
                         }
+
                         transaction.Commit();
-                        venta.reiniciarVenta();
-                        this.Close();
+
+                        //venta.reiniciarVenta();
+                        //this.Close();
 
                     }
                     catch (Exception ex)
