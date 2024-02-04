@@ -90,6 +90,16 @@
                 </Button>
                 <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" Width="68" TextAlignment="Center" Margin="0,5,0,0"><Run Language="es-mx" Text="Ver usuarios"/></TextBlock>
             </Grid>
+            <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="88" Margin="558,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="53*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <Button  Click="verTickets_Click"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Background="#00673AB7" BorderBrush="#00673AB7"  Width="85">
+                    <Image x:Name="verTickets" Source="/resources/icons/png/ticket.png"  HorizontalAlignment="Center" VerticalAlignment="Bottom"  Stretch="Fill" Width="48" Height="48"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Row="1" Width="68" TextAlignment="Center" Margin="0,5,0,0"><Run Language="es-mx" Text="Ver ticket"/></TextBlock>
+            </Grid>
 
 
 

@@ -183,6 +183,8 @@ namespace punto_venta.views
                                 carritos_id = nuevoCarrito.id,
                                 productos_id = carrito.internal_id,
                                 cantidad = carrito.CantidadCarrito,
+                                precio_unitario = carrito.PrecioUnitario,
+                                precio_total = carrito.Subtotal,
                                 lMembresia = carrito.esMembresia,
                                 lPedido = false,
                                 created_at = DateTime.Now,
@@ -205,7 +207,7 @@ namespace punto_venta.views
                         {
                             carritos_id = nuevoCarrito.id,
                             corte_cajas_id = this.cortes_caja_id,
-                            cantidad = 1,
+                            cantidad = totalProductos,
                             precio_total = TotalPagar,
                             vendedor = usuario.usuario,
                             cantidad_pagada = PagoTotal,
@@ -271,8 +273,8 @@ namespace punto_venta.views
 
                         transaction.Commit();
 
-                        //venta.reiniciarVenta();
-                        //this.Close();
+                        venta.reiniciarVenta();
+                        this.Close();
 
                     }
                     catch (Exception ex)

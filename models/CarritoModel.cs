@@ -16,9 +16,9 @@ namespace punto_venta.models
         [DisplayName("Código de Barras")]
         public string? CodigoBarras { get; set; }
         [DisplayName("Precio Unitario")]
-        public double? PrecioUnitario { get; set; }
+        public double PrecioUnitario { get; set; }
         [DisplayName("Subtotal")]
-        public double? Subtotal { get; set; }
+        public double Subtotal { get; set; }
         [DisplayName("Cantidad")]
         public int CantidadCarrito { get; set; }
         public bool esMembresia { get; set; }

@@ -71,7 +71,7 @@ namespace punto_venta.views
                             Id = resultado.id,
                             NombreProducto = resultado.nombre_producto,
                             CodigoBarras = resultado.codigo_barras,
-                            PrecioUnitario = resultado.precio_venta,
+                            PrecioUnitario = (double)resultado.precio_venta,
                             Cantidad = resultado.cantidad_producto.ToString(),
                             esMembresia = false
                         };
@@ -105,7 +105,7 @@ namespace punto_venta.views
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al obtener los resultados: " + ex.Message);
+                    MessageBox.Show("Ocurrió un problema: " + ex.Message);
                 }
             }
         }

@@ -100,7 +100,7 @@ namespace punto_venta.views.Caja
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener los resultados: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ocurrió un problema: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

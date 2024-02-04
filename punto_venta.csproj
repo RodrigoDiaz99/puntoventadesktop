@@ -23,6 +23,7 @@
     <None Remove="resources\icons\png\caja.png" />
     <None Remove="resources\icons\png\carrito.png" />
     <None Remove="resources\icons\png\membresia.png" />
+    <None Remove="resources\icons\png\ticket.png" />
     <None Remove="resources\icons\png\tienda.png" />
     <None Remove="resources\icons\png\usuariocheck.png" />
     <None Remove="resources\icons\png\usuarioplus.png" />
@@ -48,6 +49,7 @@
     <Resource Include="resources\backgrounds\background.png" />
     <Resource Include="resources\icons\png\carrito.png" />
     <Resource Include="resources\icons\png\membresia.png" />
+    <Resource Include="resources\icons\png\ticket.png" />
     <Resource Include="resources\icons\png\tienda.png" />
     <Resource Include="resources\icons\png\usuariocheck.png" />
     <Resource Include="resources\icons\png\usuarioplus.png" />

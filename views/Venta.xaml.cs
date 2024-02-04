@@ -160,7 +160,7 @@ namespace punto_venta
                 {
                     // El producto ya existe, simplemente incrementar la cantidad
                     existingProduct.CantidadCarrito += producto.CantidadCarrito; // Sumar 1 si la cantidad es nula
-                    existingProduct.Subtotal += producto.Subtotal ?? 1; // Sumar 1 si la cantidad es nula
+                    existingProduct.Subtotal += producto.Subtotal; // Sumar 1 si la cantidad es nula
                 }
                 else
                 {
@@ -233,9 +233,9 @@ namespace punto_venta
                         internal_id = producto.id,
                         NombreProducto = producto.nombre_producto,
                         CodigoBarras = producto.codigo_barras,
-                        PrecioUnitario = producto.precio_venta,
+                        PrecioUnitario = (double)producto.precio_venta,
                         CantidadCarrito = 1,
-                        Subtotal = producto.precio_venta,
+                        Subtotal = (double)producto.precio_venta,
                         esMembresia = false
                     };
 
@@ -250,5 +250,10 @@ namespace punto_venta
             }
         }
 
+        private void verTickets_Click(object sender, RoutedEventArgs e)
+        {
+            Tickets ventana = new Tickets();
+            ventana.ShowDialog();
+        }
     }
 }

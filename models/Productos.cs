@@ -15,7 +15,7 @@ namespace punto_venta.models
         [DisplayName("Producto")]
         public string? nombre_producto { get; set; }
         [DisplayName("Código de Barras")]
-        public string codigo_barras { get; set; }
+        public string? codigo_barras { get; set; }
         public bool? inventario { get; set; }
         [DisplayName("Disponible")]
         public int? cantidad_producto { get; set; }

@@ -40,6 +40,9 @@
     <Compile Update="views\Membresias\UsuarioMembresia.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\Tickets.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\Usuarios_vistas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\Membresias\UsuarioMembresia.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\Tickets.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\Usuarios_vistas.xaml">

@@ -20,7 +20,7 @@
             <Label Content="¡Bienvenido!" FontSize="22" Margin="0,157,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             <Label Content="Ingresa tus datos" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Grid HorizontalAlignment="Center" Height="70" Margin="0,248,0,0" VerticalAlignment="Top" Width="324">
-                <TextBox Margin="115,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" x:Name="txtUsuario" Height="28" TextChanged="txtUsuario_TextChanged" Text="rodrigo.diaz1" HorizontalAlignment="Left"/>
+                <TextBox Margin="115,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" x:Name="txtUsuario" Height="28" TextChanged="txtUsuario_TextChanged" Text="rodrigo.diaz" HorizontalAlignment="Left"/>
                 <PasswordBox Margin="115,43,0,0" VerticalAlignment="Top" Width="209" x:Name="txtPassword" Height="27" Password="123456" HorizontalAlignment="Left"/>
                 <Label Content="Contraseña" FontSize="14" Foreground="#FF203052" Margin="0,43,0,0" VerticalAlignment="Top" Width="109" HorizontalAlignment="Left"/>
                 <Label Content="Correo/Usuario" FontSize="14" Foreground="#FF121D33" VerticalAlignment="Top" Width="109" Height="28" HorizontalAlignment="Left"/>
