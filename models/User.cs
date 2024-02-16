@@ -26,7 +26,7 @@ namespace punto_venta.models
         public string? huella_digital { get; set; }
         public string? foto_perfil { get; set; }
         public string? ocupacion { get; set; }
-        public int? edad { get; set; }
+        public string? edad { get; set; }
         public DateTime? fecha_nacimiento { get; set; }
         public bool? expediente { get; set; }
         public bool? cliente { get; set; }
