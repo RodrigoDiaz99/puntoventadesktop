@@ -18,6 +18,8 @@ namespace punto_venta
         public DbSet<carrito_has_productos> carrito_has_productos { get; set; }
         public DbSet<usuario_membresias> usuario_membresias { get; set; }
         public DbSet<Ventas> ventas{ get; set; }
+        public DbSet<Pedidos> pedidos { get; set; }
+        public DbSet<ProductosPedidos> productos_pedidos{ get; set; }
 
         public bool IsConnectionSuccessful()
         {

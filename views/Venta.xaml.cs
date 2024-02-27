@@ -103,6 +103,12 @@ namespace punto_venta
             this.Close();
         }
 
+        private void cobrarComanda_Click(object sender, RoutedEventArgs e)
+        {
+            CobrarPedido ventana = new CobrarPedido(this);
+            ventana.ShowDialog();
+        }
+
         private void btnVerRealizarCorte(object sender, RoutedEventArgs e)
         {
             CerrarCaja cerrarCaja = new CerrarCaja(this, userId, cortes_caja_id);
