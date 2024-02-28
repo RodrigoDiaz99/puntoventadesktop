@@ -39,6 +39,7 @@ namespace punto_venta.views
         private double Cambio;
         private double EfectivoTmp;
         private int cortes_caja_id;
+        private int pedidos_id;
         private int userId;
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -96,13 +97,14 @@ namespace punto_venta.views
         {
 
         }
-        public Pagos(Venta venta, int cortes_caja_id)
+        public Pagos(Venta venta, int cortes_caja_id, int pedidos_id = 0)
         {
             InitializeComponent();
             this.venta = venta;
             userId = venta.userId;
             TotalPagar = TotalPagar = (double)venta.sumPrecioUnitario;
             dTotalPagar.Text = venta.formattedSum;
+            this.pedidos_id = pedidos_id;
             this.cortes_caja_id = cortes_caja_id;
             validarPago();
 
@@ -234,6 +236,19 @@ namespace punto_venta.views
 
                         context.ventas.Add(nuevaVenta);
                         context.SaveChanges();
+
+                        if (this.pedidos_id > 0)
+                        {
+                            Pedidos pedido = context.pedidos.Where(pedido => pedido.id.Equals(this.pedidos_id)).FirstOrDefault();
+                            if (pedido == null)
+                            {
+                                throw new Exception("Ocurrió un problema terminando la venta.");
+                            }
+                            pedido.cobrado = true;
+                            pedido.updated_at = DateTime.Now;
+
+                            context.SaveChanges();
+                        }
 
                         bool isImprimirTicketChecked = lImprimirTicket.IsChecked ?? false;
 
